@@ -2,11 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Canvas描边与填充（图案样式- 图片、Canvas画布等）</title>
-    <!-- 参考：https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/createPattern -->
+    <title>Canvas 用户交互</title>
     <script type="text/javascript">
-        var balls =[];
-
         window.addEventListener('load', eventWindowLoaded, false);
         function eventWindowLoaded() {
             canvasApp();
@@ -34,7 +31,7 @@
                 var x = e.clientX - theCanvas.getBoundingClientRect().left;
                 var y = e.clientY - theCanvas.getBoundingClientRect().top;
                 console.log(x,y);
-                //console.log(theCanvas.getBoundingClientRect().left,theCanvas.getBoundingClientRect().top);
+                // console.log(theCanvas.getBoundingClientRect().left,theCanvas.getBoundingClientRect().top);
                 console.log(context.isPointInPath(x,y));
             } 
         }
@@ -45,7 +42,7 @@
 </head>
 <body>
 <!--<div style="position: absolute; top: 50px; left: 50px;">-->
-    <canvas id="canvas" width="500" height="500" style="border:solid #ccc 2px">
+    <canvas id="canvas" width="500" height="500" style="border:solid #ccc 2px;display:block;margin:0 auto">
         Your browser does not support the HTML 5 Canvas.
     </canvas>
 </body>

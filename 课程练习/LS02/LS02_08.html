@@ -40,7 +40,9 @@
             ctx.strokeStyle = 'red';
             ctx.lineWidth = 10;
             ctx.beginPath();
-            ctx.ellipse(100, 100, 50, 75, 45 * Math.PI / 180, 0, 2 * Math.PI); //倾斜45°角ctx.stroke();
+            //x, y, radiusX, radiusY, rotation, startAngle, endAngle, anticlockwise(默认为false)
+            ctx.ellipse(100, 100, 50, 75, 0, Math.PI/2, 2 * Math.PI,false); //
+            // ctx.ellipse(100, 100, 50, 75, 45 * Math.PI / 180, 0, 2 * Math.PI); //倾斜45°角ctx.stroke();
             ctx.stroke();
             ctx.restore();
 
