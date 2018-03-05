@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas绘图基本形状</title>
+    <script type="text/javascript">
+        window.addEventListener('load', eventWindowLoaded, false);
+        function eventWindowLoaded() {
+            canvasApp();
+        }
+
+        function canvasApp() {
+            var theCanvas = document.getElementById('canvas');
+            var context = theCanvas.getContext('2d');
+            drawRect(context);
+            drawEllipse(context);
+            drawTriangle(context);
+
+        }
+        function drawRect(ctx) {
+            ctx.fillStyle = '#000000';//设置填充颜色
+            ctx.strokeStyle = '#00ffff';//设置描边颜色
+            ctx.lineWidth = 5;//设置线宽
+            ctx.beginPath();
+            ctx.rect( 200, 0, 80, 120);
+            ctx.stroke();
+
+            ctx.strokeStyle = '#00ff00';//设置描边颜色
+            ctx.fillRect(320, 20, 80, 80);
+            ctx.strokeRect(0 + 300, 0, 120, 120);
+            ctx.clearRect(40 + 300, 40, 40, 32);
+
+            //清除屏幕
+            //ctx.clearRect(0,0,canvas.width,canvas.height);
+        }
+
+        function drawEllipse(ctx) {
+            ctx.save();
+            ctx.strokeStyle = 'red';
+            ctx.lineWidth = 10;
+            ctx.beginPath();
+            ctx.ellipse(100, 100, 50, 75, 45 * Math.PI / 180, 0, 2 * Math.PI); //倾斜45°角ctx.stroke();
+            ctx.stroke();
+            ctx.restore();
+
+        }
+
+        //思考如何写出绘制三角形方法
+        function drawTriangle(ctx) {
+            ctx.triangle(10,210,100,20,10,300);
+        }
+
+        //思考如何扩展context，使之具有context.strokeTriangle; context.fillTriangle 
+        CanvasRenderingContext2D.prototype.triangle = function (x1,y1,x2,y2,x3,y3) {
+            //alert("扩展context方法triAngle");
+            //console.log(this);
+            this.moveTo(x1,y1);
+            this.lineTo(x2,y3);
+            this.lineTo(x3,y3);
+            this.closePath();
+            this.stroke();
+        }
+
+    </script>
+</head>
+
+<body>
+    <!--<div style="position: absolute; top: 50px; left: 50px;">-->
+    <div>
+        <canvas id="canvas" width="500" height="500">
+            Your browser does not support the HTML 5 Canvas.
+        </canvas>
+    </div>
+</body>
+
+</html>

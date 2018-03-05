@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas描边与填充（图案样式- 图片、Canvas画布等）</title>
+    <!-- 参考：https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/createPattern -->
+    <script type="text/javascript">
+        window.addEventListener('load', eventWindowLoaded, false);
+        function eventWindowLoaded() {
+            canvasApp();
+        }
+        
+        function canvasApp() {
+            var theCanvas = document.getElementById('canvas');
+            var context = theCanvas.getContext('2d');
+        }
+        
+    </script>
+</head>
+<body>
+<!--<div style="position: absolute; top: 50px; left: 50px;">-->
+    <canvas id="canvas" width="500" height="500" style="border:solid #ccc 2px">
+        Your browser does not support the HTML 5 Canvas.
+    </canvas>
+</body>
+</html>

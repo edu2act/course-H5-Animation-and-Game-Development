@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas 画布变换（旋转、平移、缩放）</title>
+    <!-- 参考：https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/createPattern -->
+    <script type="text/javascript">
+        window.addEventListener('load', eventWindowLoaded, false);
+        function eventWindowLoaded() {
+            canvasApp();
+        }
+
+        function canvasApp() {
+            var theCanvas = document.getElementById('canvas');
+            var context = theCanvas.getContext('2d');
+            context.save();
+            //平移
+            context.fillStyle = "green";
+            context.translate(50, 50);
+            context.fillRect(0, 0, 50, 50);
+            context.restore();
+
+            context.save();
+            //旋转
+            var angleInRadians = 5 * Math.PI / 180;
+            context.rotate(angleInRadians);
+            context.fillStyle = "red";
+            context.fillRect(100, 100, 50, 50);
+            context.restore();
+
+            context.save();
+            //缩放
+            context.scale(0.5,1);
+            context.fillStyle = "yellow";
+            context.fillRect(150, 150, 50, 50);
+            context.restore();
+
+            //设置Transform
+            //a 水平缩放
+            // b 水平倾斜
+            // c 垂直倾斜
+            // d 垂直缩放
+            // e 水平位移
+            // f 垂直位移
+            context.save();
+            context.transform(1,0,0,1,0,0);//
+            context.transform(1,0,0,1,50,0);//
+            context.transform(1,0,0,1,0,50);//transform方法可以级联
+
+            // context.setTransform(1, 0, 0, 1, 0, 0);//忽略之前的级联变换，以标准矩阵为起始重新变换
+
+
+            // context.setTransform(1,0.5,-0.5,1,30,10);
+            context.arc(225, 225, 25, (Math.PI / 180) * 0, (Math.PI / 180) * 360, false);
+            context.fill();
+            context.restore();
+        }
+
+    </script>
+</head>
+
+<body>
+    <!--<div style="position: absolute; top: 50px; left: 50px;">-->
+    <canvas id="canvas" width="500" height="500" style="border:solid #ccc 2px">
+        Your browser does not support the HTML 5 Canvas.
+    </canvas>
+</body>
+
+</html>

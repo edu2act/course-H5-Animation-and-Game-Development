@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas文本</title>
+    <script type="text/javascript">
+        window.addEventListener('load', eventWindowLoaded, false);
+        function eventWindowLoaded() {
+            canvasApp();
+        }
+
+        function canvasApp() {
+            var theCanvas = document.getElementById('canvas');
+            var context = theCanvas.getContext('2d');
+            // context.font = "50px serif";
+            context.font = "bold 80px Arial";
+
+            // var metrics = context.measureText(message);
+            // var textWidth = metrics.width;
+            // var xPosition = (theCanvas.width / 2) - (textWidth / 2);
+            // var yPosition = (theCanvas.height / 2);
+            // context.fillRect(0,0,111,111);
+            
+            // context.fillStyle = "#ff0000";
+            context.fillStyle = "red";
+            context.strokeStyle='yellow';
+            
+            context.fillText("text", 100, 100);
+            context.fillText("text", 100, 200, 100);
+            context.strokeText("text", 100, 100);
+            context.strokeText("text", 100, 200, 100);
+            
+            // context.fillText("Hello ", 0, 0);
+            // context.strokeStyle = "#000000";
+            // context.strokeText("World", xPosition, yPosition);
+        }
+
+    </script>
+</head>
+
+<body>
+    <!--<div style="position: absolute; top: 50px; left: 50px;">-->
+    <div>
+        <canvas id="canvas" width="500" height="300" style="border:2px #ccc solid">
+            Your browser does not support the HTML 5 Canvas.
+        </canvas>
+    </div>
+</body>
+
+</html>

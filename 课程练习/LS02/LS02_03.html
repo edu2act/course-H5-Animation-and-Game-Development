@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas状态存储与恢复 </title>
+    <script type="text/javascript">
+        window.addEventListener('load', eventWindowLoaded, false);
+        function eventWindowLoaded() {
+            canvasApp();
+        }
+        function canvasApp() {
+            var theCanvas = document.getElementById('canvas');
+            var context = theCanvas.getContext('2d');
+
+            //在Canvas环境中绘图时，可利用绘图堆栈状态
+            //保留内容包括（画布当前属性、变换矩阵信息）//状态的存储与恢复对于坐标变换尤其重要，参见后续坐标变换部分
+            context.fillStyle = "red";
+            context.save();
+            context.fillStyle = "blue";
+            context.fillRect(0, 0, 100, 100);
+            context.save();
+            context.fillStyle = "green";
+            context.fillRect(100, 100, 100, 100);
+            context.restore();//思考：若屏蔽此行，效果如何？
+            context.restore();
+            context.fillRect(200,200,100,100);
+        }
+        //注意：当前路径和当前位图受Canvas环境控制，不属于保存的状态
+    </script>
+</head>
+
+<body>
+    <!--<div style="position: absolute; top: 50px; left: 50px;">-->
+    <div>
+        <canvas id="canvas" width="500" height="500" style="border:solid #ccc 2px">
+            Your browser does not support the HTML 5 Canvas.
+        </canvas>
+    </div>
+</body>
+
+</html>

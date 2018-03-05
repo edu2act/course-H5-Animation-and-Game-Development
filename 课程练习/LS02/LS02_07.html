@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas绘图基础（绘制二次曲线、贝赛尔曲线）</title>
+    <script type="text/javascript">
+        window.addEventListener('load', eventWindowLoaded, false);
+        function eventWindowLoaded() {
+            canvasApp();
+        }
+        
+        function canvasApp() {
+            var theCanvas = document.getElementById('canvas');
+            var context = theCanvas.getContext('2d');
+            drawCurve();
+            function drawCurve() {
+                context.beginPath();
+                context.moveTo(0,10);
+                context.quadraticCurveTo(100,125,0,50);//二次曲线，cpx,cpy,x,y
+                context.moveTo(150,10);
+                context.bezierCurveTo(0,110,300,210,150,310);//贝塞尔曲线，cp1x,cp1y,cp2x,cp2y,x,y
+                context.stroke();
+                context.fill();
+                context.closePath();
+
+                context.beginPath();
+                context.moveTo(0,160);
+                context.lineTo(300,160);
+                context.stroke();
+                context.closePath();
+            }
+        }
+
+    </script>
+</head>
+<body>
+<!--<div style="position: absolute; top: 50px; left: 50px;">-->
+<div>
+    <canvas id="canvas" width="500" height="500" style="border:solid #ccc 2px">
+        Your browser does not support the HTML 5 Canvas.
+    </canvas>
+</div>
+</body>
+</html>

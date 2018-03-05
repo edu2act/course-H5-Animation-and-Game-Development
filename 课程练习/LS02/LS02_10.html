@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas描边与填充（图案样式- 图片、Canvas画布等）</title>
+    <!-- 参考：https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/createPattern -->
+    <script type="text/javascript">
+        window.addEventListener('load', eventWindowLoaded, false);
+        function eventWindowLoaded() {
+            canvasApp();
+        }
+        
+        function canvasApp() {
+            var theCanvas = document.getElementById('canvas');
+            var context = theCanvas.getContext('2d');
+            // drawScreenOne();
+            drawScreenTwo();
+            function drawScreenOne() {
+                var fillImg = new Image();
+                fillImg.src = './images/fill_20x20.gif';
+                fillImg.onload = function(){
+                    // var fillPattern = context.createPattern(fillImg,'repeat');
+                    var fillPattern = context.createPattern(fillImg,'repeat-x');
+                    // var fillPattern = context.createPattern(fillImg,'repeat-y');
+                    // var fillPattern = context.createPattern(fillImg,'no-repeat');
+                    context.fillStyle = fillPattern;
+                    context.fillRect(0,0,300,300);
+                }
+            }
+            function drawScreenTwo() {
+                var offScreenCanvas = document.getElementById('canvasOffScreen');
+                var offScreenContext = offScreenCanvas.getContext('2d');
+                offScreenContext.fillStyle='blue';
+                // offScreenContext.fillRect(5,5,40,40);
+
+                offScreenContext.beginPath();
+                offScreenContext.arc(25, 25, 10, Math.PI / 180 * 0, Math.PI / 180 * 145, false);
+                offScreenContext.fill();
+                offScreenContext.closePath();
+                
+                
+                
+                document.onclick = function(){
+                    var fillPattern = context.createPattern(offScreenCanvas,'repeat');
+                    context.fillStyle = fillPattern;
+                    context.fillRect(0,0,500,300);
+                }
+                
+            }
+        }
+        
+    </script>
+</head>
+<body>
+<!--<div style="position: absolute; top: 50px; left: 50px;">-->
+<div>
+    <canvas id="canvas" width="500" height="300" style="border:2px #ccc solid">
+        Your browser does not support the HTML 5 Canvas.
+    </canvas>
+    <canvas id="canvasOffScreen" width="50" height="50" style="border:2px #ccc solid">
+    <!-- <canvas id="canvasOffScreen" width="50" height="50" style="border:2px #ccc solid;display:none"> -->
+        Your browser does not support the HTML 5 Canvas.
+    </canvas>
+</div>
+</body>
+</html>

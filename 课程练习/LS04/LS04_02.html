@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas 动画固定帧率</title>
+    <script type="text/javascript">
+        window.onload = function eventWindowLoaded() {
+            canvasApp();
+        }
+
+        function canvasApp() {
+            var theCanvas = document.getElementById('canvas');
+            var context = theCanvas.getContext('2d');
+            context.fillStyle = 'blue';
+            context.font = '50px sans-serif';
+
+            var lastTime = 0;
+            function calculateFps() {
+                var now = (+new Date()), fps = 1000 / (now - lastTime);
+                lastTime = now;
+                return fps;
+            }
+
+            function animate() {
+                //canvas 清除
+                context.clearRect(0, 0, theCanvas.width, theCanvas.height);
+
+                context.fillText(calculateFps().toFixed(), 20, 60);
+                requestAnimationFrame(animate);
+            }
+            requestAnimationFrame(animate);
+        }
+
+    </script>
+</head>
+
+<body>
+    <!--<div style="position: absolute; top: 50px; left: 50px;">-->
+    <div>
+        <canvas id="canvas" width="500" height="500" style="border:5px solid #ccc">
+            Your browser does not support the HTML 5 Canvas.
+        </canvas>
+    </div>
+</body>
+
+</html>

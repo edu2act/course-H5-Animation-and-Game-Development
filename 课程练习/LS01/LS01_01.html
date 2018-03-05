@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas 案例</title>
+    <script type="text/javascript">
+        // window.addEventListener('load', eventWindowLoaded, false);
+        // function eventWindowLoaded() {
+        //     canvasApp();
+        // }
+
+        window.onload = function () {
+            canvasApp();
+        }
+
+        function canvasApp() {
+            var theCanvas = document.getElementById('canvas');
+            var context = theCanvas.getContext('2d');
+            //思考：context是什么类型？context的原型是什么？
+            console.log(context.constructor);
+            console.log(context.__proto__);
+
+            // context.fillStyle = "#00ff00";
+            context.fillStyle = "rgba(0,0,255,255)";
+            context.lineWidth = 10;
+            context.strokeStyle = "red";
+
+            context.beginPath();
+            context.moveTo(100,100);
+            context.lineTo(200,100);
+            context.lineTo(200,200);
+            context.closePath();
+            context.fill();
+            context.stroke();
+        }
+
+    </script>
+</head>
+
+<body>
+    <!--<div style="position: absolute; top: 50px; left: 50px;">-->
+    <div>
+        <canvas id="canvas" width="500" height="500" style="border:5px solid #ccc">
+            Your browser does not support the HTML 5 Canvas.
+        </canvas>
+    </div>
+</body>
+
+</html>

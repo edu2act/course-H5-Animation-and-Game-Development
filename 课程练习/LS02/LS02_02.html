@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas 执行上下文（context） </title>
+    <script type="text/javascript">
+        window.addEventListener('load', eventWindowLoaded, false);
+        function eventWindowLoaded() {
+            canvasApp();
+        }
+        function canvasApp() {
+            var theCanvas = document.getElementById('canvas');
+            var context = theCanvas.getContext('2d');
+
+            console.log("构造函数：" + context.constructor);
+            console.log(context instanceof CanvasRenderingContext2D);
+            console.log(CanvasRenderingContext2D.prototype == context);//引用类型，内容虽然相同，但false
+
+            for (const key in context) {
+                const element = context[key];
+                if (context.hasOwnProperty(key)) {
+                    console.log("Own:", element);
+                } else {
+                    console.log("UnOwn:", element);
+                }
+            }
+
+            //每个状态随时存储Canvas上下文数据（画布当前属性、变换矩阵信息、剪贴区域）
+            //当前属性包括（描边颜色、填充颜色、全局透明度、线宽、字体等等）
+            context.lineWidth = 20;
+            context.strokeStyle = "blue";
+            context.moveTo(0, 0);
+            context.lineTo(100, 100);
+            context.stroke();
+
+            context.lineWidth = 50;
+            context.strokeStyle = "#ff0000";
+            context.beginPath();//思考：若没有这句话会怎样？
+            context.moveTo(0, 100);
+            context.lineTo(100, 200);
+            context.stroke();
+
+        }
+        //注意：当前路径和当前位图受Canvas环境控制，不属于保存的状态
+    </script>
+</head>
+
+<body>
+    <!--<div style="position: absolute; top: 50px; left: 50px;">-->
+    <div>
+        <canvas id="canvas" width="500" height="500" style="border:2px #ccc solid">
+            Your browser does not support the HTML 5 Canvas.
+        </canvas>
+    </div>
+</body>
+
+</html>

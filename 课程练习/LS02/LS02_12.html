@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas上合成图形</title>
+    <!-- 参考：https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/createPattern -->
+    <script type="text/javascript">
+        window.addEventListener('load', eventWindowLoaded, false);
+        function eventWindowLoaded() {
+            canvasApp();
+        }
+
+        function canvasApp() {
+            var theCanvas = document.getElementById('canvas');
+            var context = theCanvas.getContext('2d');
+            //draw a big box on the screen
+            context.fillStyle = "black"; //need list of available colors
+            context.fillRect(10, 10, 200, 200);
+
+            //leave golbal composite operation as is
+            //now draw a red square
+            context.fillStyle = "red"; //need list of available colors
+            context.fillRect(1, 1, 50, 50);
+
+            //now set it to source-over
+            context.globalCompositeOperation = "source-atop";//默认为 source-over
+            //                "source-atop"
+            //                "source-in"
+            //                "source-out"
+            //                "source-over"
+
+            //                "destination-atop"
+            //                "destination-in"
+            //                "destination-out"
+            //                "destination-over"
+
+            context.fillRect(60, 1, 100, 100);
+
+            // lighter、copy、xor
+
+
+
+            //now set globalAlpha
+            context.globalAlpha = 0.8;         
+        }
+
+    </script>
+</head>
+
+<body>
+    <!--<div style="position: absolute; top: 50px; left: 50px;">-->
+    <div>
+        <canvas id="canvas" width="500" height="500">
+            Your browser does not support the HTML 5 Canvas.
+        </canvas>
+    </div>
+</body>
+
+</html>

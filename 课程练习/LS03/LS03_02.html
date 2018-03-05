@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Canvas 图像缩放案例</title>
+</head>
+<body style="background: black;">
+
+    <canvas id="canvas" style="display:block;margin:0 auto;border:1px solid #aaa;">
+    您的浏览器尚不支持canvas
+    </canvas>
+    <input type="range" id="scale-range" min="0.5" max="3.0" step="0.01" value="1.0" style="display:block;margin:20px auto;width:800px"/>
+
+    <script>
+        var canvas = document.getElementById("canvas")
+        var context = canvas.getContext("2d")
+        var slider = document.getElementById("scale-range")
+        var image = new Image()
+
+        window.onload = function(){
+
+            canvas.width = 1152*0.75
+            canvas.height = 768*0.75
+
+            var scale = slider.value
+            image.src = "./images/img-lg.jpg"
+            image.onload = function(){
+                drawImageByScale( scale )
+
+//                slider.onchange = function(){
+//                    scale = slider.value
+//                    drawImage( image , scale )
+//                }
+
+                slider.onmousemove = function(){
+                    scale = slider.value
+                    drawImageByScale( scale )
+                }
+            }
+
+
+        }
+
+        function drawImageByScale( scale ){
+
+            var imageWidth = 1152*0.75 * scale
+            var imageHeight = 768*0.75 * scale
+
+            //var sx = imageWidth / 2 - canvas.width / 2
+            //var sy = imageHeight / 2 - canvas.height / 2
+
+            //context.drawImage( image , sx , sy , canvas.width , canvas.height , 0 , 0 , canvas.width , canvas.height )
+            x = canvas.width /2 - imageWidth / 2
+            y = canvas.height / 2 - imageHeight / 2
+
+            context.clearRect( 0 , 0 , canvas.width , canvas.height )
+            context.drawImage( image , x , y , imageWidth , imageHeight )
+        }
+
+
+    </script>
+</body>
+</html>

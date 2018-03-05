@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas画布宽高属性、样式宽高及拉伸效果</title>
+    <!-- <link rel="stylesheet" type="text/css" href="./css/LS02_01.css"> -->
+    <script>
+        // window.addEventListener("load",eventWindowLoaded,false);
+        // function eventWindowLoaded(){
+        //     canvasApp("canvas");
+        //     canvasApp("CanvasTwo");
+        // }
+        
+        window.onload = function () {
+            let theCanvas = document.getElementById("canvas");
+
+            // theCanvas.width = 200;//设置Canvas绘图大小
+            // theCanvas.height = 200;
+            let context = theCanvas.getContext("2d");
+
+            //测试画布的宽高
+            console.log(context.canvas.width, context.canvas.height);
+
+            //填充矩形
+            context.fillStyle = "#11ffaa";
+            context.fillRect(0, 0, 100, 100);
+
+            //text
+            context.fillStyle = "#000000";
+            context.font = "20px Sans-Serif";
+            context.textBaseline = "top";
+            //            context.fillText  ("Hello World!", 195, 80 );
+            context.fillText("Hello World!", 0, 100);
+
+            context.strokeStyle = "#000000";
+            context.lineWidth = 2;
+            context.strokeRect(0, 0, context.canvas.width, context.canvas.height);
+        }
+    </script>
+</head>
+
+<body>
+    <!-- <div id="DivOne"> -->
+        <!--区分canvas宽高属性和样式中的宽高设置，理解哪些情况下会拉伸，为什么会拉伸-->
+        <!--不建议通过样式来设置Canvas的大小-->
+
+        <!--<canvas id="canvas" style="border:1px #ccc solid"></canvas> -->
+        <!--<canvas id="canvas" width="300" height="150" style="border:1px #ccc solid"></canvas>-->
+        
+        <!-- <canvas id="canvas" width="200" height="200" style="border:1px #ccc solid"></canvas> -->
+        
+        <!-- <canvas id="canvas" style="width:200px;height:200px;border:1px #ccc solid">浏览器不支持canvas</canvas> -->
+        <canvas id="canvas" width="200px" height="200px" style="width:300px;height:150px;border:1px #ccc solid"></canvas>
+    <!-- </div> -->
+</body>
+
+</html>

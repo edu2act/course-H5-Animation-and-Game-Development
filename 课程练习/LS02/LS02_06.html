@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas绘图基础（绘制弧）</title>
+    <script type="text/javascript">
+        window.addEventListener('load', eventWindowLoaded, false);
+        function eventWindowLoaded() {
+            canvasApp();
+        }
+
+        function canvasApp() {
+
+            var theCanvas = document.getElementById('canvas');
+            var context = theCanvas.getContext('2d');
+            context.lineWidth = 5;
+            context.strokeStyle = "blue";
+
+            context.save();//注意：Canvas只能有一个“当前”路径，当调用context.save()方法时，不会将它存储为当前绘图状态的一部分
+            context.beginPath();
+            // context.arc(100,100,50,0,Math.PI);//默认是顺时针,即默认anticlockwise为false
+            context.arc(100, 100, 50, Math.PI / 2, 0);//默认是顺时针,即默认anticlockwise为false
+            //                context.arc(100,100,50,0,Math.PI/2,false);
+            //                context.arc(100,100,50,0,Math.PI/2,true);
+            //                context.fill();
+            // context.closePath();
+            context.stroke();
+            context.restore();
+
+            context.save();//注意：Canvas只能有一个“当前”路径，当调用context.save()方法时，不会将它存储为当前绘图状态的一部分
+            context.strokeStyle = '#ff00ff';//设置描边颜色
+            context.beginPath();//虽然调用了context.save()，但不会将当前路径存储为状态的一部分，所以若不beginPath描边依然覆盖
+            context.moveTo(100, 200);
+            context.arcTo(300, 200, 300, 300, 100);
+            
+            // context.arc(100, 100, 50, 0, Math.PI / 2, true);
+            context.stroke();
+            //context.fill();
+            context.closePath();
+            context.restore();
+            
+
+            //注意：Canvas只能有一个“当前”路径，当调用context.save()方法时，不会将它存储为当前绘图状态的一部分
+            //详见context.save 和context.restore部分
+            //                context.save();
+            //                context.stroke();//虽然调用了context.save()，但不会将当前路径存储为状态的一部分，所以描边依然有效
+            //                context.restore();
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <!--<div style="position: absolute; top: 50px; left: 50px;">-->
+    <div>
+        <canvas id="canvas" width="500" height="500" style="border:solid #ccc 2px">
+            Your browser does not support the HTML 5 Canvas.
+        </canvas>
+    </div>
+</body>
+
+</html>

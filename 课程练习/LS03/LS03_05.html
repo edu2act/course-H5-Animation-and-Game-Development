@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas 图像</title>
+    <script type="text/javascript">
+        window.addEventListener('load', eventWindowLoaded, false);
+        function eventWindowLoaded() {
+            canvasApp();
+        }
+
+        function canvasApp() {
+            var theCanvas = document.getElementById('canvas');
+            var context = theCanvas.getContext('2d');
+            var photo=new Image();
+            photo.addEventListener('load', eventPhotoLoaded , false);
+            photo.src="./images/butterfly.jpg";
+
+            var windowWidth=500;
+            var windowHeight=500;
+//            var windowWidth=100;
+//            var windowHeight=100;
+
+
+//            var viewPortWidth=500;
+//            var viewPortHeight=500;
+            var viewPortWidth=200;
+            var viewPortHeight=200;
+
+//            var windowX=0;
+//            var windowY=0;
+            var windowX=1580;
+            var windowY=1190;
+
+            function eventPhotoLoaded() {
+                drawScreen()
+            }
+
+            function drawScreen(){
+                context.drawImage(photo, windowX, windowY,windowWidth,windowHeight,0,0,viewPortWidth,viewPortHeight);
+            }
+        }
+
+    </script>
+</head>
+<body>
+<!--<div style="position: absolute; top: 50px; left: 50px;">-->
+<div>
+    <canvas id="canvas" width="500" height="500">
+        Your browser does not support the HTML 5 Canvas.
+    </canvas>
+</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas 图像动画</title>
+    <script type="text/javascript">
+        window.addEventListener('load', eventWindowLoaded, false);
+        function eventWindowLoaded() {
+            canvasApp();
+        }
+
+        function canvasApp() {
+            var theCanvas = document.getElementById('canvas');
+            var context = theCanvas.getContext('2d');
+            var tileSheet=new Image();
+            tileSheet.addEventListener('load', eventSheetLoaded , false);
+            tileSheet.src="./images/tanks_sheet.png";
+
+
+            var animationFrames=[1,2,3,4,5,6,7,8];
+            var frameIndex=0;
+            var rotation=90;
+            var x=50;
+            var y=50;
+            var dx=1;
+            var dy=0;
+
+            function eventSheetLoaded() {
+                startUp();
+            }
+
+            function drawScreen() {
+                x=x+dx;
+                y=y+dy;
+
+                //draw a background so we can wee the Canvas edges
+                context.fillStyle="#aaaaaa";
+                context.fillRect(0,0,500,500);
+
+                context.save();
+                context.setTransform(1,0,0,1,0,0);
+                var angleInRadians =rotation * Math.PI / 180;
+                context.translate(x+16, y+16);
+                context.rotate(angleInRadians);
+                var sourceX=Math.floor(animationFrames[frameIndex] % 8) *32;
+                var sourceY=Math.floor(animationFrames[frameIndex] / 8) *32;
+
+                context.drawImage(tileSheet, sourceX, sourceY,32,32,-16,-16,32,32);
+                context.restore();
+
+                frameIndex++;
+                if (frameIndex ==animationFrames.length) {
+                    frameIndex=0;
+                }
+
+            }
+
+            function startUp(){
+                gameLoop();
+            }
+
+            function gameLoop() {
+                window.setTimeout(gameLoop, 100);
+                drawScreen();
+            }
+        }
+
+    </script>
+</head>
+<body>
+<!--<div style="position: absolute; top: 50px; left: 50px;">-->
+<div>
+    <canvas id="canvas" width="500" height="500">
+        Your browser does not support the HTML 5 Canvas.
+    </canvas>
+</div>
+</body>
+</html>

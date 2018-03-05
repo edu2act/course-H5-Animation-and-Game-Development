@@ -1,0 +1,19 @@
+#CanvasOne{
+    /* display: block; */
+    width: 200px;
+    height: 200px;
+    /*默认宽300px 高150px 使用默认的话不存在拉伸*/
+    /*width: 300px;*/
+    /*height: 150px;*/
+    background-color: yellow;
+    /*border: 2px solid #000000;*/
+}
+
+#CanvasTwo{
+    width: 200px;
+    height: 200px;
+    /*CanvasTwo已经设置了宽高属性分别为200px和200px，思考：下述将样式宽高修改后，是否存在拉伸？*/
+    /*width: 300px;*/
+    /*height: 150px;*/
+    background-color: green;
+}

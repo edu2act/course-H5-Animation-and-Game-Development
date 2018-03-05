@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Canvas 图像添加水印案例</title>
+</head>
+<body style="background: black;">
+
+    <canvas id="canvas" style="display:block;margin:0 auto;border:1px solid #aaa;">
+        您的浏览器尚不支持canvas
+    </canvas>
+    <input type="range" id="scale-range" min="0.5" max="3.0" step="0.01" value="1.0" style="display:block;margin:20px auto;width:800px"/>
+
+    <canvas id="watermark-canvas" style="display:none;margin:0 auto;border:1px solid #aaa;">
+        您的浏览器尚不支持canvas
+    </canvas>
+
+    <script>
+        var canvas = document.getElementById("canvas")
+        var context = canvas.getContext("2d")
+        var slider = document.getElementById("scale-range")
+
+        var watermarkCanvas = document.getElementById("watermark-canvas")
+        var watermarkContext = watermarkCanvas.getContext("2d")
+
+        window.onload = function(){
+
+            canvas.width = 1152*0.75
+            canvas.height = 768*0.75
+
+            var image = new Image()
+            var scale = 1.0
+            image.src = "./images/img-lg.jpg"
+            image.onload = function(){
+                drawImage( image , scale )
+
+                slider.onmousemove = function(){
+                    scale = slider.value
+                    drawImage( image , scale )
+                }
+            }
+
+            //setup watermark canvas
+            watermarkCanvas.width = 600
+            watermarkCanvas.height = 100
+
+            watermarkContext.font = "bold 50px Arial"
+            watermarkContext.lineWidth = "1"
+            watermarkContext.fillStyle = "rgba( 255 , 255 , 255 , 0.5 )"
+            watermarkContext.textBaseline = "middle";
+            watermarkContext.fillText( "== 水印文字水印文字 ==" , 20 , 50 )
+        }
+
+        function drawImage( image , scale ){
+
+            imageWidth = 1152*0.75 * scale
+            imageHeight = 768*0.75 * scale
+            x = canvas.width /2 - imageWidth / 2
+            y = canvas.height / 2 - imageHeight / 2
+
+            context.clearRect( 0 , 0 , canvas.width , canvas.height )
+            context.drawImage( image , x , y , imageWidth , imageHeight )
+            context.drawImage( watermarkCanvas , canvas.width - watermarkCanvas.width ,
+                                                  canvas.height - watermarkCanvas.height )
+        }
+
+
+    </script>
+</body>
+</html>
