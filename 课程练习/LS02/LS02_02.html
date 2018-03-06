@@ -14,8 +14,8 @@
             var context = theCanvas.getContext('2d');
 
             // console.log("构造函数：" + context.constructor);
-            console.log(context instanceof CanvasRenderingContext2D);
-            console.log(CanvasRenderingContext2D.prototype == context.__proto__);//引用类型，内容虽然相同，但false
+            console.log(context instanceof CanvasRenderingContext2D);//
+            console.log(CanvasRenderingContext2D.prototype == context.__proto__);//
 
             for (const key in context) {
                 const element = context[key];
