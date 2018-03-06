@@ -1,37 +1,36 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Canvas 绘图测试</title>
+    <title>Canvas 执行上下文（context） </title>
     <script type="text/javascript">
         // window.addEventListener('load', eventWindowLoaded, false);
         // function eventWindowLoaded() {
         //     canvasApp();
         // }
+
         window.onload = function () {
             canvasApp();
         }
-        
         function canvasApp() {
             var theCanvas = document.getElementById('canvas');
             var context = theCanvas.getContext('2d');
-            /*
-            context.fillRect(0,0,200,200);
-            document.onclick = function(){
-                theCanvas.width -= 10;
-                //context.fillRect(0,0,200,200);
+            
+            context.fillStyle='red';
+            context.fillRect(0,0,100,100);
+            context.clearRect(25, 25, 50, 50);
+            
+            theCanvas.onclick = function(){
+                theCanvas.height -= 200;
             }
-            */
+
         }
-        
-    </script>
+</script>
 </head>
 <body>
-<!--<div style="position: absolute; top: 50px; left: 50px;">-->
-<div>
-    <canvas id="canvas" width="500" height="500" style="border:solid #ccc 2px">
-        Your browser does not support the HTML 5 Canvas.
+    <canvas id="canvas" style="border:2px #ccc solid">
+            Your browser does not support the HTML 5 Canvas.
     </canvas>
-</div>
+
 </body>
-</html>

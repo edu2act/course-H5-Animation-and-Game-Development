@@ -22,11 +22,10 @@
             ctx.moveTo(10,10);
             ctx.lineTo(200,10);
             ctx.lineTo(200,120);
-            // ctx.closePath();//有closePath和没有的区别,closePath与beginPath是否成对？
+            ctx.closePath();//有closePath和没有的区别,closePath与beginPath是否成对？
             ctx.stroke();
 
-            
-            // ctx.beginPath(); //有beginPath和没有的区别
+            ctx.beginPath(); //有beginPath和没有的区别
             ctx.strokeStyle = 'red';
             ctx.lineWidth = 10;
             ctx.moveTo(10,200);//

@@ -13,16 +13,16 @@
             var theCanvas = document.getElementById('canvas');
             var context = theCanvas.getContext('2d');
 
-            console.log("构造函数：" + context.constructor);
+            // console.log("构造函数：" + context.constructor);
             console.log(context instanceof CanvasRenderingContext2D);
-            console.log(CanvasRenderingContext2D.prototype == context);//引用类型，内容虽然相同，但false
+            console.log(CanvasRenderingContext2D.prototype == context.__proto__);//引用类型，内容虽然相同，但false
 
             for (const key in context) {
                 const element = context[key];
                 if (context.hasOwnProperty(key)) {
-                    console.log("Own:", element);
+                    console.log("自身属性:", element);
                 } else {
-                    console.log("UnOwn:", element);
+                    console.log("非自身属性:", element);
                 }
             }
 
@@ -40,8 +40,9 @@
             context.moveTo(0, 100);
             context.lineTo(100, 200);
             context.stroke();
-
+            
         }
+        
         //注意：当前路径和当前位图受Canvas环境控制，不属于保存的状态
     </script>
 </head>
