@@ -20,11 +20,18 @@
             context.save();//注意：Canvas只能有一个“当前”路径，当调用context.save()方法时，不会将它存储为当前绘图状态的一部分
             context.beginPath();
             // context.arc(100,100,50,0,Math.PI);//默认是顺时针,即默认anticlockwise为false
-            context.arc(100, 100, 50, Math.PI / 2, 0);//默认是顺时针,即默认anticlockwise为false
+            // context.arc(100, 100, 50, Math.PI / 2, 0);//默认是顺时针,即默认anticlockwise为false
             //                context.arc(100,100,50,0,Math.PI/2,false);
             //                context.arc(100,100,50,0,Math.PI/2,true);
             //                context.fill();
             // context.closePath();
+            context.save();
+            context.arc(100, 100, 50, Math.PI , Math.PI *1.5);
+            context.stroke();
+            context.restore();
+            context.beginPath();
+            
+            context.arc(100, 100, 50, Math.PI*0.5, 0,true);
             context.stroke();
             context.restore();
 

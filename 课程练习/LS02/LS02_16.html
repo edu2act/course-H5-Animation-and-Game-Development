@@ -42,24 +42,24 @@
             ctx.save(); 
             // 绘制第一个圆 
             ctx.beginPath();
-            ctx.fillStyle = 'tomato';
+            ctx.fillStyle = 'red';
             ctx.arc(cx, cy, radius, 0, Math.PI * 2, false);
             ctx.fill(); 
             ctx.clip(); 
             
             // 绘制第二个圆 
-            ctx.beginPath(); ctx.fillStyle = '#333';
+            ctx.beginPath(); ctx.fillStyle = 'black';
             ctx.arc(cx + 100, cy, radius, 0, Math.PI * 2, false);
             ctx.fill();
             //ctx.clip(); 
+            ctx.restore();
             
             // 绘制第三个圆 
             ctx.beginPath();
-            ctx.fillStyle = 'cornsilk';
+            ctx.fillStyle = 'green';
             ctx.arc(cx, cy + 100, radius, 0, Math.PI * 2, false);
             ctx.fill(); 
             //ctx.clip();
-            ctx.restore();
             
             // 绘制第四个圆 
             ctx.beginPath();

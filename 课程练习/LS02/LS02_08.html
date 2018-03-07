@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Canvas绘图基本形状</title>
-    <!-- <script src="./js/MyCanvasLib.js"></script> -->
+    <script src="./js/MyCanvasLib.js"></script>
     <script>
         window.addEventListener('load', eventWindowLoaded, false);
         function eventWindowLoaded() {
@@ -42,7 +42,7 @@
             ctx.lineWidth = 10;
             ctx.beginPath();
             //x, y, radiusX, radiusY, rotation, startAngle, endAngle, anticlockwise(默认为false)
-            ctx.ellipse(100, 100, 50, 75, 0, Math.PI/2, 2 * Math.PI,false); //
+            ctx.ellipse(100, 100, 50, 75, Math.PI/4, Math.PI/2, 2 * Math.PI,false); //
             // ctx.ellipse(100, 100, 50, 75, 45 * Math.PI / 180, 0, 2 * Math.PI); //倾斜45°角ctx.stroke();
             ctx.stroke();
             ctx.restore();
@@ -51,21 +51,21 @@
 
         //思考如何写出绘制三角形方法
         function drawTriangle(ctx) {
-            ctx.triangle(10,210,100,20,10,300);
+            ctx.triangle(10,210,100,200,10,300);
             
         }
-
+/*
         //思考如何扩展context，使之具有context.strokeTriangle; context.fillTriangle 
         CanvasRenderingContext2D.prototype.triangle = function (x1,y1,x2,y2,x3,y3) {
             //alert("扩展context方法triAngle");
             //console.log(this);
             this.moveTo(x1,y1);
-            this.lineTo(x2,y3);
+            this.lineTo(x2,y2);
             this.lineTo(x3,y3);
             this.closePath();
             this.stroke();
         }
-
+*/
         //思考：如何创建自己的Canvas图形引擎，参见MyCanvasLib.js，注意要引入MyCanvasLib.js
 
     </script>
