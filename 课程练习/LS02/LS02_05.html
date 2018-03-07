@@ -18,14 +18,14 @@
         function drawLine(ctx) {
             console.log(ctx.lineWidth);
             
-            ctx.save();//注意：Canvas只能有一个“当前”路径，当调用context.save()方法时，不会将它存储为当前绘图状态的一部分
+            ctx.save();//注意：Canvas只能有一个“当前”路径，调用save和restore方法时，不会将它存储为当前绘图状态的一部分
             ctx.beginPath();//深入理解beginPath
-            //绘制路径 路径就是一系列点及这些点之间的连线
             ctx.lineWidth = 5;
             ctx.lineCap = "round";//"butt" "round" "square"
             ctx.lineJoin = "miter";//"bevel" "round"
             ctx.strokeStyle = "orange";
             ctx.fillStyle = 'black';
+            
 
             ctx.moveTo(10,10);
             ctx.lineTo(200,10);
@@ -35,21 +35,17 @@
             // ctx.fill();
             ctx.restore();
             
-            ctx.lineWidth = 10;
-            ctx.strokeStyle = '#ff00ff';//设置描边颜色
-            ctx.beginPath();
-            ctx.moveTo(10,200);
-            ctx.lineTo(200,200);
-            ctx.lineTo(200,300);
-            //ctx.closePath();
-            //ctx.stroke();
-            //ctx.fill();
-
-            //注意：Canvas只能有一个“当前”路径，当调用ctx.save()方法时，不会
-            //将它存储为当前绘图状态的一部分，详见ctx.save 和ctx.restore部分
             ctx.save();
             ctx.strokeStyle = 'green';//
             ctx.lineCap = "round";
+            ctx.lineWidth = 10;
+            ctx.beginPath();//路径的起始受beginPath的限制，而不会被save和restore截断
+            ctx.moveTo(10,200);
+            ctx.lineTo(200,200);
+            ctx.lineTo(200,300);
+
+            //注意：Canvas只能有一个“当前”路径，当调用ctx.save()方法时，不会
+            //将它存储为当前绘图状态的一部分，详见ctx.save 和ctx.restore部分
             ctx.stroke();//虽然调用了ctx.save()，但不会将当前路径存储为状态的一部分，所以描边依然有效
             ctx.restore();
         }

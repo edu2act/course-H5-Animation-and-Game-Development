@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Canvas绘图基本形状</title>
-    <script type="text/javascript">
+    <!-- <script src="./js/MyCanvasLib.js"></script> -->
+    <script>
         window.addEventListener('load', eventWindowLoaded, false);
         function eventWindowLoaded() {
             canvasApp();
@@ -51,6 +52,7 @@
         //思考如何写出绘制三角形方法
         function drawTriangle(ctx) {
             ctx.triangle(10,210,100,20,10,300);
+            
         }
 
         //思考如何扩展context，使之具有context.strokeTriangle; context.fillTriangle 
@@ -63,6 +65,8 @@
             this.closePath();
             this.stroke();
         }
+
+        //思考：如何创建自己的Canvas图形引擎，参见MyCanvasLib.js，注意要引入MyCanvasLib.js
 
     </script>
 </head>

@@ -30,7 +30,7 @@
 
             context.save();//注意：Canvas只能有一个“当前”路径，当调用context.save()方法时，不会将它存储为当前绘图状态的一部分
             context.strokeStyle = '#ff00ff';//设置描边颜色
-            context.beginPath();//虽然调用了context.save()，但不会将当前路径存储为状态的一部分，所以若不beginPath描边依然覆盖
+            context.beginPath();//虽然调用了save和restore，但不会将当前路径存储为状态的一部分，所以若不beginPath描边依然覆盖
             context.moveTo(100, 200);
             context.arcTo(300, 200, 300, 300, 100);
             
@@ -41,7 +41,7 @@
             context.restore();
             
 
-            //注意：Canvas只能有一个“当前”路径，当调用context.save()方法时，不会将它存储为当前绘图状态的一部分
+            //注意：Canvas只能有一个“当前”路径，当调用save和restore方法时，不会将它存储为当前绘图状态的一部分
             //详见context.save 和context.restore部分
             //                context.save();
             //                context.stroke();//虽然调用了context.save()，但不会将当前路径存储为状态的一部分，所以描边依然有效

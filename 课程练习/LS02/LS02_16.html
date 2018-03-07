@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Canvas 剪切</title>
@@ -7,38 +8,75 @@
     <script type="text/javascript">
         window.addEventListener('load', eventWindowLoaded, false);
         function eventWindowLoaded() {
-            canvasApp();
+            // canvasApp();
+            clipTest(200,200,100);
         }
-        
+
         function canvasApp() {
             var theCanvas = document.getElementById('canvas');
             var context = theCanvas.getContext('2d');
 
             context.beginPath();
-            context.fillStyle='black';
-            context.fillRect(0,0,theCanvas.width,theCanvas.height);
-            
+            context.fillStyle = 'black';
+            context.fillRect(0, 0, theCanvas.width, theCanvas.height);
+
             context.beginPath();
-            context.arc(250,250,150,0,Math.PI*2);
-            context.fillStyle='white';
+            context.arc(250, 250, 150, 0, Math.PI * 2);
+            context.fillStyle = 'white';
             context.fill();
             context.clip();
+
+            context.font = 'bold 100px sans-serif';
+            context.textAlign = 'center';
+            context.textBaseline = 'middle';
+            context.fillStyle = 'red';
+            context.fillText("Canvas", theCanvas.width / 2, theCanvas.height / 2);
+
             
-            context.font='bold 100px sans-serif';
-            context.textAlign='center';
-            context.textBaseline='middle';
-            context.fillStyle='red';
-            context.fillText("Canvas",theCanvas.width/2,theCanvas.height/2);
-            
-            //详细案例参见：https://www.w3cplus.com/canvas/clip.html
         }
-        
+        function clipTest(cx,cy,radius) {
+            //详细说明参见：https://www.w3cplus.com/canvas/clip.html
+            var theCanvas = document.getElementById('canvas');
+            var ctx = theCanvas.getContext('2d');
+
+            ctx.save(); 
+            // 绘制第一个圆 
+            ctx.beginPath();
+            ctx.fillStyle = 'tomato';
+            ctx.arc(cx, cy, radius, 0, Math.PI * 2, false);
+            ctx.fill(); 
+            ctx.clip(); 
+            
+            // 绘制第二个圆 
+            ctx.beginPath(); ctx.fillStyle = '#333';
+            ctx.arc(cx + 100, cy, radius, 0, Math.PI * 2, false);
+            ctx.fill();
+            //ctx.clip(); 
+            
+            // 绘制第三个圆 
+            ctx.beginPath();
+            ctx.fillStyle = 'cornsilk';
+            ctx.arc(cx, cy + 100, radius, 0, Math.PI * 2, false);
+            ctx.fill(); 
+            //ctx.clip();
+            ctx.restore();
+            
+            // 绘制第四个圆 
+            ctx.beginPath();
+            ctx.strokeStyle = '#ccc';
+            ctx.lineWidth = 10;
+            ctx.arc(cx, cy, radius, 0, Math.PI * 2, false);
+            ctx.stroke();
+            ctx.restore();
+        }
     </script>
 </head>
+
 <body>
-<!--<div style="position: absolute; top: 50px; left: 50px;">-->
+    <!--<div style="position: absolute; top: 50px; left: 50px;">-->
     <canvas id="canvas" width="500" height="500" style="border:solid #ccc 2px">
         Your browser does not support the HTML 5 Canvas.
     </canvas>
 </body>
+
 </html>
