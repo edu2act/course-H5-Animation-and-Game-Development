@@ -10,8 +10,6 @@
 		}
 
 		function canvasApp() {
-			//   var pointImage = new Image();
-			//   pointImage.src = "point.png";
 
 			function drawScreen() {
 				//绘制背景
@@ -20,7 +18,7 @@
 				context.strokeStyle = '#000000';
 				context.strokeRect(1, 1, theCanvas.width - 2, theCanvas.height - 2);
 
-				//偏移位置
+				//新位置
 				ball.x += xunits;
 				ball.y += yunits;
 
@@ -44,7 +42,7 @@
 			context = theCanvas.getContext('2d');
 
 			// function gameLoop() {
-			// 		window.setTimeout(gameLoop);
+			// 		window.setTimeout(gameLoop, 20);
 			// 		drawScreen()	
 			// 	}
 			// gameLoop();

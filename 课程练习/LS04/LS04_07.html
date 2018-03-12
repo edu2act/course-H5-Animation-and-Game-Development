@@ -15,8 +15,6 @@ function eventWindowLoaded() {
 
 function canvasApp() {
 	
-
-
   function  drawScreen () {
 		
 		context.fillStyle = '#EEEEEE';
@@ -38,6 +36,7 @@ function canvasApp() {
 		context.arc(ball.x,ball.y,ball.radius,0,Math.PI*2,true);
 		context.closePath();
 		context.fill();
+		requestAnimationFrame(drawScreen);
   			
 	}
 	var speed = 6;
@@ -56,12 +55,7 @@ function canvasApp() {
 	var p1 = {x:20,y:theCanvas.height-radius};
 	var ball = {x:p1.x, y:p1.y, velocityx: vx, velocityy:vy, radius:radius, elasticity: elasticity};
 	
-	function gameLoop() {
-			window.setTimeout(gameLoop, 20);
-			drawScreen()	
-		}
-		
-	gameLoop();
+	var animationHandle = requestAnimationFrame(drawScreen);
 	
 	
 }

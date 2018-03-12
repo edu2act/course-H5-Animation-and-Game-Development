@@ -50,7 +50,7 @@
 				}
 
 				context.drawImage(shipImage, ship.x, ship.y);
-
+				requestAnimationFrame(drawScreen);
 			}
 			var easeValue = .05;
 			var p1 = { x: 240, y: -20 };
@@ -63,12 +63,13 @@
 			theCanvas = document.getElementById('canvasOne');
 			context = theCanvas.getContext('2d');
 
-			function gameLoop() {
-				window.setTimeout(gameLoop, 20);
-				drawScreen()
-			}
+			// function gameLoop() {
+			// 	window.setTimeout(gameLoop, 20);
+			// 	drawScreen()
+			// }
+			// gameLoop();
 
-			gameLoop();
+			var animationHandle = requestAnimationFrame(drawScreen);
 
 
 		}

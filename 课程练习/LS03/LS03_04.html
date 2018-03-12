@@ -35,18 +35,20 @@
                 offCanvas.width = image.width;
                 offCanvas.height = image.height;
                 scale = offCanvas.width / canvas.width;
-
+                //console.log(scale);
                 context.drawImage( image , 0 , 0 , canvas.width , canvas.height );
                 offContext.drawImage( image , 0 , 0 );
             }
         }
 
+        //计算坐标补偿
         function windowToCanvas( x , y ){
             var bbox = canvas.getBoundingClientRect();
             return {x:x-bbox.left , y:y-bbox.top};
         }
 
         canvas.onmousedown = function(e){
+            //preventDefault() 方法阻止元素发生默认的行为（例如，当点击提交按钮时阻止对表单的提交）。
             e.preventDefault();
             isMouseDown = true;
             point = windowToCanvas( e.clientX , e.clientY );
@@ -76,7 +78,6 @@
         }
 
         function drawCanvasWithMagnifier( isShowMagnifier , point ){
-
             context.clearRect( 0 , 0 , canvas.width , canvas.height );
             context.drawImage( image , 0 , 0 , canvas.width , canvas.height );
             if( isShowMagnifier == true ){
@@ -87,18 +88,17 @@
         function drawMagnifier( point ){
 
             var mr = 200;
-
             var imageLG_cx = point.x * scale;
             var imageLG_cy = point.y * scale;
 
+            //sourse x y
             var sx = imageLG_cx - mr;
             var sy = imageLG_cy - mr;
-
+            //destination x y
             var dx = point.x - mr;
             var dy = point.y - mr;
 
-            context.save();
-
+            context.save();//保持状态
             context.lineWidth = 10.0;
             context.strokeStyle = "#069";
 

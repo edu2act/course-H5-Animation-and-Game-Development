@@ -53,16 +53,18 @@
                     frameIndex=0;
                 }
 
+                requestAnimationFrame(drawScreen);
             }
 
-            function startUp(){
-                gameLoop();
-            }
+            // function startUp(){
+            //     gameLoop();
+            // }
 
-            function gameLoop() {
-                window.setTimeout(gameLoop, 100);
-                drawScreen();
-            }
+            // function gameLoop() {
+            //     window.setTimeout(gameLoop, 100);
+            //     drawScreen();
+            // }
+            var animationHandle = requestAnimationFrame(drawScreen);
         }
 
     </script>

@@ -14,7 +14,6 @@ function canvasApp() {
 	
 
   function  drawScreen () {
-
 		context.fillStyle = '#EEEEEE';
 		context.fillRect(0, 0, theCanvas.width, theCanvas.height);
 		//Box
@@ -31,7 +30,7 @@ function canvasApp() {
 		context.arc(ball.x,ball.y,15,0,Math.PI*2,true);
 		context.closePath();
 		context.fill();
-	
+		requestAnimationFrame(drawScreen);
 	}
 	
 	var radius = 100;
@@ -41,14 +40,13 @@ function canvasApp() {
     theCanvas = document.getElementById('canvasOne');
 	context = theCanvas.getContext('2d');
 	
-	function gameLoop() {
-			window.setTimeout(gameLoop, 20);
-			drawScreen()	
-		}
-		
-	gameLoop();
+	// function gameLoop() {
+	// 		window.setTimeout(gameLoop, 20);
+	// 		drawScreen()	
+	// 	}
+	// gameLoop();
 	
-	
+	var animationHandle = requestAnimationFrame(drawScreen);
 }
 
 </script>
