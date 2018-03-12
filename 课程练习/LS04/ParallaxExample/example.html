@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+	<head>
+	  <title>Parallax</title>
+
+		<style> 
+		   body {
+				background: #dddddd;
+			}
+
+			#canvas {
+            position: absolute;
+            left: 20px;
+            top: 30px;
+            background: #ffffff;
+            cursor: crosshair;
+            margin-left: 10px;
+            margin-top: 10px;
+            -webkit-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+            -moz-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+            box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+			}
+
+
+
+		</style>
+   </head>
+
+  <body>
+    <input id='animateButton' type='button' value='Animate'/>
+
+    <canvas id='canvas' width='1000' height='440'>
+      Canvas not supported
+    </canvas>
+
+    <script src='../../shared/js/requestNextAnimationFrame.js'></script>
+    <script src='example.js'></script>
+  </body>
+</html>

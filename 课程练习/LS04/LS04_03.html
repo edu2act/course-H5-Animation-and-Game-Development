@@ -1,63 +1,78 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Canvas 动画可变帧率</title>
+    <title></title>
     <script type="text/javascript">
-        window.onload = function eventWindowLoaded() {
+        window.addEventListener('load', eventWindowLoaded, false);
+        function eventWindowLoaded() {
             canvasApp();
         }
 
         function canvasApp() {
             var theCanvas = document.getElementById('canvas');
             var context = theCanvas.getContext('2d');
-            context.fillStyle = 'blue';
-            context.font = '50px sans-serif';
+            var tileSheet=new Image();
+            tileSheet.addEventListener('load', eventSheetLoaded , false);
+            tileSheet.src="./images/tanks_sheet.png";
 
-            var lastFpsUpdateTime = 0,
-                lastFpsUpdate = 0;
 
-            function calculateFps() {
-                var now = (+new Date()), fps = 1000 / (now - lastTime);
-                lastTime = now;
-                return fps;
+            var animationFrames=[1,2,3,4,5,6,7,8];
+            var frameIndex=0;
+            var rotation=90;
+            var x=50;
+            var y=50;
+            var dx=1;
+            var dy=0;
+
+            function eventSheetLoaded() {
+                startUp();
             }
-            function animate(time) {
-                var fps = 0;
 
-                if (time == undefined) {
-                    time = (+new Date());
-                }
-                //待修改
-                if (!paused) {
-                    //canvas 清除
-                    context.clearRect(0, 0, theCanvas.width, theCanvas.height);
+            function drawScreen() {
+                x=x+dx;
+                y=y+dy;
 
-                    fps = calculateFps();
+                //draw a background so we can wee the Canvas edges
+                context.fillStyle="#aaaaaa";
+                context.fillRect(0,0,500,500);
 
-                    if (now - lastFpsUpdateTime > 1000) {
-                        lastFpsUpdateTime = now;
-                        lastFpsUpdate = fps;
-                    }
-                    context.fillText(lastFpsUpdate.toFixed() + "fps", 20, 60);
-                    requestAnimationFrame(animate);
+                context.save();
+                context.setTransform(1,0,0,1,0,0);
+                var angleInRadians =rotation * Math.PI / 180;
+                context.translate(x+16, y+16);
+                context.rotate(angleInRadians);
+                var sourceX=Math.floor(animationFrames[frameIndex] % 8) *32;
+                var sourceY=Math.floor(animationFrames[frameIndex] / 8) *32;
+
+                context.drawImage(tileSheet, sourceX, sourceY,32,32,-16,-16,32,32);
+                context.restore();
+
+                frameIndex++;
+                if (frameIndex ==animationFrames.length) {
+                    frameIndex=0;
                 }
 
             }
-            requestAnimationFrame(animate);
+
+            function startUp(){
+                gameLoop();
+            }
+
+            function gameLoop() {
+                window.setTimeout(gameLoop, 100);
+                drawScreen();
+            }
         }
 
     </script>
 </head>
-
 <body>
-    <!--<div style="position: absolute; top: 50px; left: 50px;">-->
-    <div>
-        <canvas id="canvas" width="500" height="500" style="border:5px solid #ccc">
-            Your browser does not support the HTML 5 Canvas.
-        </canvas>
-    </div>
+<!--<div style="position: absolute; top: 50px; left: 50px;">-->
+<div>
+    <canvas id="canvas" width="500" height="500">
+        Your browser does not support the HTML 5 Canvas.
+    </canvas>
+</div>
 </body>
-
 </html>

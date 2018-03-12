@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
+
 <script type="text/javascript">
 window.addEventListener('load', eventWindowLoaded, false);	
 function eventWindowLoaded() {
@@ -10,36 +11,50 @@ function eventWindowLoaded() {
 
 }
 
+
+
 function canvasApp() {
 	
 
-  function  drawScreen () {
 
+  function  drawScreen () {
+		
 		context.fillStyle = '#EEEEEE';
 		context.fillRect(0, 0, theCanvas.width, theCanvas.height);
 		//Box
 		context.strokeStyle = '#000000'; 
 		context.strokeRect(1,  1, theCanvas.width-2, theCanvas.height-2);
 		
-		ball.x = circle.centerX + Math.cos(circle.angle) * circle.radius;
-		ball.y = circle.centerY + Math.sin(circle.angle) * circle.radius;
+     	ball.velocityy += gravity;
 		
-		circle.angle += ball.speed;
-	
+		if ((ball.y + ball.radius) > theCanvas.height) {
+			ball.velocityy = -(ball.velocityy)*ball.elasticity;
+		}
+		ball.y += ball.velocityy;
+		ball.x += ball.velocityx;
+		
 		context.fillStyle = "#000000";
 		context.beginPath();
-		context.arc(ball.x,ball.y,15,0,Math.PI*2,true);
+		context.arc(ball.x,ball.y,ball.radius,0,Math.PI*2,true);
 		context.closePath();
 		context.fill();
-	
+  			
 	}
+	var speed = 6;
+	var gravity = .1;
+	var elasticity = .5;
+	var angle = 285;
+	var radians = angle * Math.PI/ 180;
+	var radius = 15;
 	
-	var radius = 100;
-	var circle = {centerX:250, centerY:250, radius:125, angle:0}
-	var ball = {x:0, y:0,speed:.1};
-		
-    theCanvas = document.getElementById('canvasOne');
+	var vx = Math.cos(radians) * speed;
+	var vy = Math.sin(radians) * speed;
+	
+	theCanvas = document.getElementById('canvasOne');
 	context = theCanvas.getContext('2d');
+	
+	var p1 = {x:20,y:theCanvas.height-radius};
+	var ball = {x:p1.x, y:p1.y, velocityx: vx, velocityy:vy, radius:radius, elasticity: elasticity};
 	
 	function gameLoop() {
 			window.setTimeout(gameLoop, 20);
@@ -54,7 +69,7 @@ function canvasApp() {
 </script>
 
 </head>
-<body>  
+<body> 
 <div style="position: absolute; top: 50px; left: 50px;">
 
 <canvas id="canvasOne" width="500" height="500">
