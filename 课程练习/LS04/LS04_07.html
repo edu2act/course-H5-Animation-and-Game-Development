@@ -29,7 +29,7 @@ function canvasApp() {
 			ball.velocityy = -(ball.velocityy)*ball.elasticity;
 		}
 		ball.y += ball.velocityy;
-		ball.x += ball.velocityx;
+		//ball.x += ball.velocityx;//屏蔽此行查看自由落体运动
 		
 		context.fillStyle = "#000000";
 		context.beginPath();
@@ -37,13 +37,12 @@ function canvasApp() {
 		context.closePath();
 		context.fill();
 		requestAnimationFrame(drawScreen);
-  			
 	}
 	var speed = 6;
-	var gravity = .1;
-	var elasticity = .5;
-	var angle = 285;
-	var radians = angle * Math.PI/ 180;
+	var gravity = .1;//重力加速度
+	var elasticity = .5; //能量损失系数
+	var angle = 285;//角度
+	var radians = angle * Math.PI/ 180;//弧度
 	var radius = 15;
 	
 	var vx = Math.cos(radians) * speed;

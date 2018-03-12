@@ -27,6 +27,7 @@
 				context.closePath();
 				context.fill();
 
+				//碰撞后角度的改变，关键部分
 				if (ball.x > theCanvas.width || ball.x < 0) {
 					angle = 180 - angle;
 					updateBall();
@@ -34,9 +35,11 @@
 					angle = 360 - angle;
 					updateBall();
 				}
+
 				requestAnimationFrame(drawScreen);
 			}
 
+			//计算偏移量
 			function updateBall() {
 				radians = angle * Math.PI / 180;
 				xunits = Math.cos(radians) * speed;
@@ -44,7 +47,7 @@
 			}
 
 			var speed = 5;
-			var p1 = { x: 20, y: 20 };
+			var p1 = { x: 20, y: 20 };//初始位置
 			var angle = 35;
 			var radians = 0;
 			var xunits = 0;

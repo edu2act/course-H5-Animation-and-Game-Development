@@ -24,10 +24,9 @@
 			var pointImage = new Image();
 			pointImage.src = "./images/pointwhite.png";
 			function drawScreen() {
-				
+				//背景图案
 				context.fillStyle = '#000000';
 				context.fillRect(0, 0, theCanvas.width, theCanvas.height);
-				//Box
 				context.strokeStyle = '#ffffff';
 				context.strokeRect(1, 1, theCanvas.width - 2, theCanvas.height - 2);
 
@@ -38,11 +37,8 @@
 				ship.x += ship.velocityx;
 				ship.y += ship.velocityy;
 
-
-				//Draw points to illustrate path
-
+				//绘制轨迹路径点
 				points.push({ x: ship.x, y: ship.y });
-
 				for (var i = 0; i < points.length; i++) {
 					context.drawImage(pointImage, points[i].x + shipImage.width / 2, points[i].y, 1, 1);
 				}
@@ -75,13 +71,6 @@
 
 			theCanvas = document.getElementById('canvasOne');
 			context = theCanvas.getContext('2d');
-
-			// function gameLoop() {
-			// 		window.setTimeout(gameLoop, 20);
-			// 		drawScreen()	
-			// 	}
-
-			// gameLoop();
 
 			var animationHandle = requestAnimationFrame(drawScreen);
 		}
