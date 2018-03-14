@@ -43,20 +43,18 @@
             var imageData = contexta.getImageData( 0 , 0 , canvasa.width , canvasa.height );
             var pixelData = imageData.data;
             for( var i = 0 ; i < canvasb.width * canvasb.height ; i ++ ){
-
                 var r = pixelData[i*4+0];
                 var g = pixelData[i*4+1];
                 var b = pixelData[i*4+2];
-
                 var grey = r*0.3+g*0.59+b*0.11;
 
                 pixelData[i*4+0] = grey;
                 pixelData[i*4+1] = grey;
                 pixelData[i*4+2] = grey;
+                // pixelData[i*4+3] = 128;
             }
-
             //context.putImageData(imagedata, dx, dy, dirtyX, dirtyY, dirtyWidth, dirtyHeight);
-            //dx：目标x     dirtyX：原图x    dirtyWidth:原图截取宽度
+            //dx：目标x     dirtyX：原图起始x位置    dirtyWidth:截取原图宽度
             contextb.putImageData( imageData , 0 , 0 , 0 , 0 , canvasb.width , canvasb.height );
             context.putImageData();
         }

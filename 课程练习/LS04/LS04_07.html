@@ -24,12 +24,16 @@ function canvasApp() {
 		context.strokeRect(1,  1, theCanvas.width-2, theCanvas.height-2);
 		
      	ball.velocityy += gravity;
-		
+		// console.log(ball.velocityy);
+		 
+		//碰撞地面，速度反向
 		if ((ball.y + ball.radius) > theCanvas.height) {
 			ball.velocityy = -(ball.velocityy)*ball.elasticity;
+			console.log(ball.velocityy);
+			ball.velocityy = -6.0;
 		}
 		ball.y += ball.velocityy;
-		//ball.x += ball.velocityx;//屏蔽此行查看自由落体运动
+		// ball.x += ball.velocityx;//屏蔽此行查看自由落体运动
 		
 		context.fillStyle = "#000000";
 		context.beginPath();
@@ -40,7 +44,7 @@ function canvasApp() {
 	}
 	var speed = 6;
 	var gravity = .1;//重力加速度
-	var elasticity = .5; //能量损失系数
+	var elasticity = 1; //能量损失系数
 	var angle = 285;//角度
 	var radians = angle * Math.PI/ 180;//弧度
 	var radius = 15;

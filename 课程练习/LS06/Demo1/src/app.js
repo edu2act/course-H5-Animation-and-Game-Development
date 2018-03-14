@@ -59,10 +59,15 @@ var HelloWorldLayer = cc.Layer.extend({
             )
         );
         */
-        var sp1 = new cc.Sprite(res.Page_png);
+        // var sp1 = new cc.Sprite(res.Page_png);
+        var sp1 = new cc.Sprite(res.Page_png,cc.rect(0,0,200,200));
         sp1.x = size.width/2;
         sp1.y = size.height/2;
         this.addChild(sp1);
+
+        // sp1.setAnchorPoint(1,0.5);
+        // sp1.setAnchorPoint(0,0);
+        sp1.setAnchorPoint(1,1);
 
         sp1.runAction(cc.repeatForever(cc.rotateBy(5,30)));
 

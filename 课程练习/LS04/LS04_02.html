@@ -11,18 +11,19 @@ function eventWindowLoaded() {
 }
 
 function canvasApp() {
-	
-
+	var radius = 100;
+	var circle = {centerX:250, centerY:250, radius:125, angle:0}
+	var ball = {x:0, y:0,speed:.1};
+    theCanvas = document.getElementById('canvasOne');
+	context = theCanvas.getContext('2d');
   function  drawScreen () {
 		context.fillStyle = '#EEEEEE';
 		context.fillRect(0, 0, theCanvas.width, theCanvas.height);
-		//Box
 		context.strokeStyle = '#000000'; 
 		context.strokeRect(1,  1, theCanvas.width-2, theCanvas.height-2);
 		
 		ball.x = circle.centerX + Math.cos(circle.angle) * circle.radius;
 		ball.y = circle.centerY + Math.sin(circle.angle) * circle.radius;
-		
 		circle.angle += ball.speed;
 	
 		context.fillStyle = "#000000";
@@ -30,21 +31,10 @@ function canvasApp() {
 		context.arc(ball.x,ball.y,15,0,Math.PI*2,true);
 		context.closePath();
 		context.fill();
-		requestAnimationFrame(drawScreen);
+		animationHandle = requestAnimationFrame(drawScreen);
 	}
 	
-	var radius = 100;
-	var circle = {centerX:250, centerY:250, radius:125, angle:0}
-	var ball = {x:0, y:0,speed:.1};
-		
-    theCanvas = document.getElementById('canvasOne');
-	context = theCanvas.getContext('2d');
 	
-	// function gameLoop() {
-	// 		window.setTimeout(gameLoop, 20);
-	// 		drawScreen()	
-	// 	}
-	// gameLoop();
 	
 	var animationHandle = requestAnimationFrame(drawScreen);
 }

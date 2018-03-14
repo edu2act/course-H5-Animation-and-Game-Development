@@ -33,7 +33,7 @@
                 x=x+dx;
                 y=y+dy;
 
-                //draw a background so we can wee the Canvas edges
+                //draw a background
                 context.fillStyle="#aaaaaa";
                 context.fillRect(0,0,500,500);
 
@@ -44,7 +44,8 @@
                 context.rotate(angleInRadians);
                 var sourceX=Math.floor(animationFrames[frameIndex] % 8) *32;
                 var sourceY=Math.floor(animationFrames[frameIndex] / 8) *32;
-
+                console.log(sourceX, sourceY);
+                
                 context.drawImage(tileSheet, sourceX, sourceY,32,32,-16,-16,32,32);
                 context.restore();
 
@@ -56,14 +57,6 @@
                 requestAnimationFrame(drawScreen);
             }
 
-            // function startUp(){
-            //     gameLoop();
-            // }
-
-            // function gameLoop() {
-            //     window.setTimeout(gameLoop, 100);
-            //     drawScreen();
-            // }
             var animationHandle = requestAnimationFrame(drawScreen);
         }
 
