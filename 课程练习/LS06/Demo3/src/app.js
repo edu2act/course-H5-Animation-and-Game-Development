@@ -70,7 +70,9 @@ var HelloWorldLayer = cc.Layer.extend({
         */
         this.redSprite.y -= this.speed;
         if(this.redSprite.y < 0){
-            this.speed = -this.speed;
+            // cc.log(-this.speed);
+            this.speed = -12.6;
+            // this.speed = -this.speed;
         }else{
             this.speed += 0.2;
             //this.speed += 10*dt;

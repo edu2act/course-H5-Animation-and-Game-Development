@@ -44,7 +44,6 @@ var HelloWorldLayer = cc.Layer.extend({
 
         var menu = new cc.Menu(toggleItem);
         this.addChild(menu);
-        cc.LayerGradient
         return true;
     }
 });

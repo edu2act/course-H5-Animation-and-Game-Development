@@ -24,6 +24,8 @@ var HelloWorldLayer = cc.Layer.extend({
         this.addChild(menu);
 
         menu.alignItemsHorizontallyWithPadding(50);
+        // menu.setPosition(cc.p(0,0));
+
 
         return true;
     }
