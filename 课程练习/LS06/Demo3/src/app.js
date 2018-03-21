@@ -75,7 +75,6 @@ var HelloWorldLayer = cc.Layer.extend({
             this.speed += 0.2;
             //this.speed += 10*dt;
         }
-
     }
 });
 

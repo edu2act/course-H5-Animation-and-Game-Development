@@ -24,25 +24,28 @@ var HelloWorldLayer = cc.Layer.extend({
         },this);
 
         var menu = new cc.Menu(startMenuItem,setMenuItem,otherMenuItem);
-        //menu.alignItemsHorizontally();
-        //menu.alignItemsHorizontallyWithPadding(size.width*0.3);
+        //菜单位置设置方案一
+        menu.alignItemsHorizontally();
+        // menu.alignItemsHorizontallyWithPadding(size.width*0.3);
         //menu.alignItemsVertically();
         //menu.alignItemsVerticallyWithPadding(50);
         this.addChild(menu);
-        //menu.y = size.height*0.3;
+        menu.y = size.height*0.3;
 
+
+        //菜单位置设置方案二
         //menu.setPosition(cc.p(0,0));
-        menu.x = 0;
-        menu.y = 0;
+        // menu.x = 0;
+        // menu.y = 0;
 
-        startMenuItem.x = size.width*0.5;
-        startMenuItem.y = size.height*0.5;
-
-        setMenuItem.x = size.width*0.2;
-        setMenuItem.y = size.height*0.3;
-
-        otherMenuItem.x = size.width*0.8;
-        otherMenuItem.y = size.height*0.7;
+        // startMenuItem.x = size.width*0.5;
+        // startMenuItem.y = size.height*0.5;
+        //
+        // setMenuItem.x = size.width*0.2;
+        // setMenuItem.y = size.height*0.3;
+        //
+        // otherMenuItem.x = size.width*0.8;
+        // otherMenuItem.y = size.height*0.7;
         
         return true;
     }

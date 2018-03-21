@@ -8,16 +8,17 @@ var HelloWorldLayer = cc.Layer.extend({
         var size = cc.winSize;
 
         var ttfLabel = new cc.LabelTTF("这是LabelTTF","",50);
-        //var ttfLabel = new cc.LabelTTF("LabelTTF","ComicAndy",50);
+        // var ttfLabel = new cc.LabelTTF("LabelTTF","ComicAndy",50);
         ttfLabel.x = size.width/2;
         ttfLabel.y = size.height/2;
 
+        //设置字体样式
         ttfLabel.setFontFillColor(cc.color.RED);
         ttfLabel.setFontSize(100);
         ttfLabel.enableStroke(cc.color.YELLOW,5);
         ttfLabel.enableShadow(cc.color.WHITE,15,15,15);
 
-        //this.addChild(ttfLabel);
+        this.addChild(ttfLabel);
 
         this.ttfLabel = ttfLabel;
         //this.scheduleUpdate();
@@ -50,7 +51,7 @@ var HelloWorldLayer = cc.Layer.extend({
     },
     update:function(){
         if(this.ttfLabel.fontSize > 120){
-            this.ttfLabel.fontSize = 100;
+            this.ttfLabel.fontSize = 50;
         }else{
             this.ttfLabel.fontSize += 1;
         }
