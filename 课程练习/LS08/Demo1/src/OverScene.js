@@ -12,7 +12,8 @@ var OverLayer = cc.Layer.extend({
         this.addChild(label);
 
         var menuItem = new cc.MenuItemFont("切换到第一场景",function(){
-            cc.director.runScene(new StartScene());
+            // cc.director.runScene(new StartScene());
+            cc.director.runScene(new cc.TransitionProgressInOut(2,new StartScene()));
         },this);
         var menu = new cc.Menu(menuItem);
         this.addChild(menu);

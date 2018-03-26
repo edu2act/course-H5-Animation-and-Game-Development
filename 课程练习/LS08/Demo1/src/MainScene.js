@@ -13,6 +13,10 @@ var MainLayer = cc.Layer.extend({
 
         var menuItem = new cc.MenuItemFont("切换到等三场景",function(){
             cc.director.runScene(new OverScene());
+            // cc.director.runScene(new cc.TransitionPageTurn(1.0,new OverScene(),false));
+            // cc.director.runScene(new cc.TransitionFade(2.0,new OverScene(),cc.color.BLACK));
+            // cc.director.runScene(new cc.TransitionCrossFade(2.0,new OverScene()));
+            cc.director.runScene(new cc.TransitionMoveInB(2.0,new OverScene()));
         },this);
         var menu = new cc.Menu(menuItem);
         this.addChild(menu);

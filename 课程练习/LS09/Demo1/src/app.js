@@ -17,8 +17,21 @@ var HelloWorldLayer = cc.Layer.extend({
         sp1.x = size.width*0.3;
         sp1.y = size.height*0.5;
         this.addChild(sp1);
-
+/*
         var sp2 = new cc.Sprite(res.spider_png,cc.rect(0,0,100,100),null);
+        sp2.x = size.width*0.6;
+        sp2.y = size.height*0.5;
+        //sp2.setScale(0.5);
+        this.addChild(sp2);
+*/
+
+        cc.spriteFrameCache.addSpriteFrames(res.enemy11_plist,res.enemy11_png);
+        var sp2 = new cc.Sprite("#11_L_at_00005.png");
+
+        // cc.spriteFrameCache.addSpriteFrames(res.enemy11_plist,res.enemy11_png);
+        // var spriteFrame = cc.spriteFrameCache.getSpriteFrame("11_L_at_00005.png");
+        // var sp2 = new cc.Sprite(spriteFrame );
+
         sp2.x = size.width*0.6;
         sp2.y = size.height*0.5;
         //sp2.setScale(0.5);
@@ -26,12 +39,12 @@ var HelloWorldLayer = cc.Layer.extend({
 
         var moveMenuItem = new cc.MenuItemFont("Move",function(){
             sp2.x -= 5;
-            //if(cc.rectContainsPoint(sp1.getBoundingBox(),sp2.getPosition())){
-            //    cc.log("碰到了");
-            //}
-            if(cc.rectContainsRect(sp1.getBoundingBox(),sp2.getBoundingBox())){
-                cc.log("碰到了");
+            if(cc.rectContainsPoint(sp1.getBoundingBox(),sp2.getPosition())){
+               cc.log("碰到了");
             }
+            // if(cc.rectContainsRect(sp1.getBoundingBox(),sp2.getBoundingBox())){
+            //     cc.log("碰到了");
+            // }
         },this);
         var menu = new cc.Menu(moveMenuItem);
         menu.y = size.height*0.3;
