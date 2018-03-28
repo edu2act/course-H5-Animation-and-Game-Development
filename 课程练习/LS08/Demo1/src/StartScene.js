@@ -34,7 +34,7 @@ var StartBgLayer =cc.Layer.extend({
 });
 
 var StartScene = cc.Scene.extend({
-    onEnter:function(){
+    ctor:function(){
         this._super();
         //var bgLayer = new StartBgLayer();
         //this.addChild(bgLayer);

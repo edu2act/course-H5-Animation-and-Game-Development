@@ -22,7 +22,7 @@ var OverLayer = cc.Layer.extend({
     }
 });
 var OverScene = cc.Scene.extend({
-    onEnter:function(){
+    ctor:function(){
         this._super();
         var layer = new OverLayer();
         this.addChild(layer);

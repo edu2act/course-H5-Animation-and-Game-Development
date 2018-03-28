@@ -25,7 +25,7 @@ var MainLayer = cc.Layer.extend({
     }
 });
 var MainScene = cc.Scene.extend({
-    onEnter:function(){
+    ctor:function(){
         this._super();
         var layer = new MainLayer();
         this.addChild(layer);

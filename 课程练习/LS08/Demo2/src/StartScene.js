@@ -45,7 +45,6 @@ var StartScene = cc.Scene.extend({
         //this.addChild(bgLayer);
         var layer = new StartLayer();
         this.addChild(layer);
-
     },
     onEnterTransitionDidFinish:function () {
         this._super();
