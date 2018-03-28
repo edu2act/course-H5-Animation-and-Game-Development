@@ -13,17 +13,13 @@ var MainLayer = cc.Layer.extend({
         var size = cc.winSize;
 
         //背景
-        var bg = new cc.Sprite(res.bg1_jpg);
-        bg.x = cc.winSize.width / 2;
-        bg.y = cc.winSize.height / 2;
-        this.addChild(bg);
-        this.arr[0] = bg;
-
-        var bg2 = new cc.Sprite(res.bg1_jpg);
-        bg2.x = cc.winSize.width / 2;
-        bg2.y = cc.winSize.height / 2 + bg.getBoundingBox().height;
-        this.addChild(bg2);
-        this.arr[1] = bg2;
+        for(var i=0;i<2;i++){
+            var bg = new cc.Sprite(res.bg1_jpg);
+            bg.x = cc.winSize.width / 2;
+            bg.y = cc.winSize.height / 2+i*(bg.getBoundingBox().height);
+            this.addChild(bg);
+            this.arr[i] = bg;
+        }
 
         //我方飞机
         var p1 = new cc.Sprite(res.p1_png);
