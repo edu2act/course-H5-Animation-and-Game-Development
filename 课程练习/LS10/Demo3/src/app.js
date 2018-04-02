@@ -42,7 +42,9 @@ var HelloWorldLayer = cc.Layer.extend({
 */
 
         //间隔动作(ActionInterval)练习三 闪烁 进度条 颜色
-        this.sprites[0].runAction(cc.blink(20.0,10));
+         this.sprites[0].runAction(cc.blink(20.0,10));
+        //this.sprites[0].runAction(cc.speed(cc.blink(20.0,10),5));//5倍速
+
 
         var timer = new cc.ProgressTimer(this.sprites[1]);
         timer.x = this.sprites[1].x+100;
@@ -58,6 +60,12 @@ var HelloWorldLayer = cc.Layer.extend({
         this.sprites[2].runAction(cc.tintTo(5.0,128,0,0));
         //this.sprites[2].runAction(cc.tintBy(5.0,128,128,128));
 
+        //变速 speed 与 ease
+        this.sprites[1].runAction(cc.speed(cc.moveBy(20,300,0),5));//5倍速
+
+        var tempAct = cc.moveBy(5.0,200,0);
+        var tempEaseAction = tempAct.easing(cc.easeElasticInOut());//cc.easeBackIn();
+        this.sprites[2].runAction(tempEaseAction);
 
         return true;
     }

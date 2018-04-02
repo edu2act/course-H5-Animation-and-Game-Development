@@ -19,11 +19,16 @@ var HelloWorldLayer = cc.Layer.extend({
         // 这两类动作都继承于有限时间动作类(FiniteTimeAction)。
 
 
+
         //间隔动作(ActionInterval)练习一 移动、跳跃、旋转
         this.sprites[0].runAction(cc.moveBy(10.0,200,0));
         // this.sprites[0].runAction(cc.moveBy(10.0,cc.p(200,0)));
         // this.sprites[0].runAction(cc.moveTo(10.0,200,0));
         // this.sprites[0].runAction(cc.moveTo(10.0,cc.p(200,0)));
+
+        // var moveAction = new cc.MoveBy(10.0,100,0);
+        // moveAction.tag = 100;
+        // this.sprites[0].runAction(moveAction);
 
         this.sprites[1].runAction(cc.jumpBy(10.0,100,0,100,2));
         // this.sprites[1].runAction(cc.jumpBy(10.0,cc.p(100,0),100,2));
