@@ -15,7 +15,7 @@ var HelloWorldLayer = cc.Layer.extend({
             this.sprites[i].y = size.height*(0.3*i+0.2);
             this.addChild(this.sprites[i]);
         }
-        /*
+
         //帧动画 方法一
         var animation = new cc.Animation();
         for (var i = 1; i < 15; i++) {
@@ -33,9 +33,9 @@ var HelloWorldLayer = cc.Layer.extend({
         animation.setRestoreOriginalFrame(true);
         var animateAction = cc.animate(animation);
         this.sprites[0].runAction(cc.repeatForever(animateAction));
-*/
 
 
+/*
         //帧动画 方法二
         cc.spriteFrameCache.addSpriteFrames(res.sp_animation_plist);
         var spriteFrames = [];
@@ -50,7 +50,7 @@ var HelloWorldLayer = cc.Layer.extend({
         var animateAction = cc.animate(animation);
         this.sprites[1].runAction(animateAction);
         // this.sprites[1].runAction(animateAction.repeatForever());
-
+*/
         return true;
     }
 });

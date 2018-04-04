@@ -5,14 +5,13 @@ var HelloWorldLayer = cc.Layer.extend({
         // 1. super init first
         this._super();
         var size = cc.winSize;
-        
+
         var label = new cc.LabelTTF("xxx");
         label.x = size.width / 2;
         label.y = size.height * 0.8;
         label.setFontSize(20);
         this.addChild(label);
 
-/*
         var yellowSprite = new cc.Sprite(res.Yellow_png);
         yellowSprite.x = size.width*0.4;
         yellowSprite.y = size.height*0.5;
@@ -24,7 +23,7 @@ var HelloWorldLayer = cc.Layer.extend({
         redSprite.y = size.height*0.5;
         redSprite.tag = 99;
         this.addChild(redSprite);
-        //redSprite.setRotation(45);
+        redSprite.setRotation(45);
 
         var listener = cc.EventListener.create({
             event:cc.EventListener.TOUCH_ONE_BY_ONE,
@@ -38,13 +37,13 @@ var HelloWorldLayer = cc.Layer.extend({
                 }
 
                 //精确点击
-                //var locationInView = target.convertToNodeSpace(location);
-                //var targetSize = target.getContentSize();
-                //var frame = cc.rect(0,0,targetSize.width,targetSize.height);
-                //if(cc.rectContainsPoint(frame,locationInView)){
+                // var locationInView = target.convertToNodeSpace(location);
+                // var targetSize = target.getContentSize();
+                // var frame = cc.rect(0,0,targetSize.width,targetSize.height);
+                // if(cc.rectContainsPoint(frame,locationInView)){
                 //    label.setString("点击到红色矩形！");
                 //    return true;
-                //}
+                // }
 
                 //label.setString("onTouchBegan:"+location.x+"  "+location.y);
                 return false; //返回布尔类型，若返回为false则，后边回调都不再执行
@@ -71,45 +70,7 @@ var HelloWorldLayer = cc.Layer.extend({
         });
         cc.eventManager.addListener(listener,redSprite);
         cc.eventManager.addListener(listener.clone(),yellowSprite);
-*/
-        var redSprite = new MySprite(res.Red_png);
-        redSprite.x = size.width *0.4;
-        redSprite.y = size.height*0.5;
-        redSprite.tag = 99;
-        this.addChild(redSprite);
 
-        var yellowSprite = new MySprite(res.Yellow_png);
-        yellowSprite.x = size.width *0.6;
-        yellowSprite.y = size.height*0.5;
-        yellowSprite.tag = 100;
-        this.addChild(yellowSprite);
-
-        //var that = this;
-        //var cbAction = cc.callFunc(function(){that.removeChild(redSprite)});
-        var cbAction = cc.callFunc(function(){
-            redSprite.getParent().removeChild(redSprite)
-        });
-        this.runAction(cc.sequence(cc.delayTime(5),cbAction));
-
-        function getKeyStr(keycode) {
-            for (var keyTemp in cc.KEY) {
-                if (cc.KEY[keyTemp] == keycode) {
-                    return keyTemp;
-                }
-            }
-            return "";
-        }
-        if('keyboard' in cc.sys.capabilities){
-            cc.eventManager.addListener({
-                event:cc.EventListener.KEYBOARD,
-                onKeyPressed:function(key,event){
-                    label.setString("Pressed:"+getKeyStr(key));
-                },
-                onKeyReleased:function(key,event){
-                    label.setString("Released:"+getKeyStr(key));
-                }
-            },this);
-        }
 
         return true;
     }
