@@ -63,8 +63,9 @@ var HelloWorldLayer = cc.Layer.extend({
         //变速 speed 与 ease
         this.sprites[1].runAction(cc.speed(cc.moveBy(20,300,0),5));//5倍速
 
-        var tempAct = cc.moveBy(5.0,200,0);
-        var tempEaseAction = tempAct.easing(cc.easeElasticInOut());//cc.easeBackIn();
+        var tempAct = cc.moveBy(5.0,300,0);
+        // var tempEaseAction = tempAct.easing(cc.easeElasticInOut());//cc.easeBackIn();
+        var tempEaseAction = tempAct.easing(cc.easeExponentialInOut());//cc.easeBackIn();
         this.sprites[2].runAction(tempEaseAction);
 
         return true;
