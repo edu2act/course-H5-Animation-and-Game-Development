@@ -35,17 +35,18 @@ var HelloWorldLayer = cc.Layer.extend({
                     label.setString("点击到"+target.tag+"矩形！");
                     return true;
                 }
-
+/*
                 //精确点击
-                // var locationInView = target.convertToNodeSpace(location);
-                // var targetSize = target.getContentSize();
-                // var frame = cc.rect(0,0,targetSize.width,targetSize.height);
-                // if(cc.rectContainsPoint(frame,locationInView)){
-                //    label.setString("点击到红色矩形！");
-                //    return true;
-                // }
-
+                var locationInView = target.convertToNodeSpace(location);
+                var targetSize = target.getContentSize();
+                var frame = cc.rect(0,0,targetSize.width,targetSize.height);
+                if(cc.rectContainsPoint(frame,locationInView)){
+                   label.setString("点击到红色矩形！");
+                   return true;
+                }
+*/
                 //label.setString("onTouchBegan:"+location.x+"  "+location.y);
+
                 return false; //返回布尔类型，若返回为false则，后边回调都不再执行
             },
             onTouchMoved: function (touch, event) {

@@ -1,6 +1,7 @@
 var HelloWorldLayer = cc.Layer.extend({
     runner:null,
     stone:null,
+    speed:2,
     ctor:function () {
         this._super();
         var size = cc.winSize;
@@ -43,10 +44,16 @@ var HelloWorldLayer = cc.Layer.extend({
     stoneCallBack:function (dt) {
         if(this.stone.x<0){
             this.stone.x = cc.winSize.width*(1+cc.random0To1());
-            cc.log(this.stone.x);
+            this.speed += 2;
         }else{
-            this.stone.x -= 2;
+            this.stone.x -= this.speed;
         }
+        if(cc.rectContainsPoint(this.runner.getBoundingBox(),this.stone.getPosition())){
+            cc.log("碰撞到了！");
+            this.unscheduleAllCallbacks();
+            this.runner.stopAllActions();
+        }
+
     },
     touchCallBack:function () {
         var that = this;
