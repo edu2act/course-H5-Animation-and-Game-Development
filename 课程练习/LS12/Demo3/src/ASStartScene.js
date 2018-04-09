@@ -11,9 +11,11 @@ var ASStartLayer = cc.Layer.extend({
         var size = cc.winSize;
         this.addChild(new cc.LayerColor(cc.color.WHITE));
 
+        //打开chrome控制台，查看相应的存储变化
         var ls = cc.sys.localStorage;
         if (ls.getItem("isMusicOn") == null) {
-            ls.setItem("isMusicOn", "YES");ls.setItem("isEffectOn", "YES");
+            ls.setItem("isMusicOn", "YES");
+            ls.setItem("isEffectOn", "YES");
         }
         //音乐开关
         var onItem = new cc.MenuItemImage(res.MusicOnNormal_png, res.MusicOnSelected_png, function () {
@@ -22,12 +24,14 @@ var ASStartLayer = cc.Layer.extend({
         }, this);
         var toggleMenuItem = new cc.MenuItemToggle(onItem, offItem, function () {
             if(toggleMenuItem.getSelectedIndex() == 0){
-                ls.setItem("isMusicOn","YES");cc.audioEngine.playMusic(res.Bg_mp3, true);
+                ls.setItem("isMusicOn","YES");
+                cc.audioEngine.playMusic(res.Bg_mp3, true);
             }else{
-                ls.setItem("isMusicOn","NO");cc.audioEngine.stopMusic();
+                ls.setItem("isMusicOn","NO");
+                cc.audioEngine.stopMusic();
             }
         }, this);
-        //
+        //后续每次重新开启是，首先检测之前存储的音乐状态设置，并进行相应的操作
         if (ls.getItem("isMusicOn") == "YES") {
             toggleMenuItem.setSelectedIndex(0);
             cc.audioEngine.playMusic(res.Bg_mp3, true);
@@ -50,6 +54,7 @@ var ASStartLayer = cc.Layer.extend({
             }
         }, this);
 
+        //后续每次重新开启是，首先检测之前存储的音乐状态设置，并进行相应的操作
         if (ls.getItem("isEffectOn") == "YES") {
             toggleMenuItem2.setSelectedIndex(0);
         } else {

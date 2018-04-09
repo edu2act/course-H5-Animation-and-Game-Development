@@ -11,6 +11,7 @@ var HelloWorldLayer = cc.Layer.extend({
         //cc.localStorage
 
         //json plist
+
         //cc.loader
 
         return true;

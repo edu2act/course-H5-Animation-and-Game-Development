@@ -4,8 +4,6 @@ var res = {
     CloseSelected_png : "res/CloseSelected.png",
     Untitled_plist : "res/Untitled.plist",
     Untitled_png : "res/Untitled.png",
-    New_json : "res/newParticle.json",
-    New_png : "res/newParticle.png",
     Fire_png : "res/fire.png"
 };
 

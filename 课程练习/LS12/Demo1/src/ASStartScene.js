@@ -4,8 +4,6 @@
 var ASStartLayer = cc.Layer.extend({
     sprite: null,
     ctor: function () {
-        //////////////////////////////
-        // 1. super init first
         this._super();
 
         var size = cc.winSize;

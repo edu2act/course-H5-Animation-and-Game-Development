@@ -12,8 +12,8 @@
 
     "jsList" : [
         "src/resource.js",
-        "src/ASStartScene.js",
-        "src/ASMainScene.js",
+        "src/FirstScene.js",
+        "src/SecondScene.js",
         "src/app.js"
     ]
 }
