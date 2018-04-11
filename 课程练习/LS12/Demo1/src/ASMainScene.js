@@ -36,10 +36,3 @@ var ASMainScene = cc.Scene.extend({
         this.addChild(layer);
     }
 });
-
-var EffectEngine = function(){};
-EffectEngine.playEffect = function(url){
-    if (cc.sys.localStorage.getItem("isEffectOn") == "YES") {
-        cc.audioEngine.playEffect(url);
-    }
-};
