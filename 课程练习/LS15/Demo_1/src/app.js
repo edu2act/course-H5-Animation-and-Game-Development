@@ -27,7 +27,17 @@ var HelloWorldLayer = cc.Layer.extend({
         for(var i in res_test){
             var fileName = "res/Enemy11/"+res_test[i];
             cc.textureCache.addImage(fileName,this.loadingCallBack,this);
+            // cc.spriteFrameCache.addSpriteFrameWithFile("res/xxx.plist");
         }
+
+        var menuItemLabel = new cc.MenuItemFont("测 试",function () {
+            // cc.director.pushScene(new TempScene());
+            cc.director.runScene(new TempScene());
+        },this);
+        menuItemLabel.setFontSize(50);
+        var menu = new cc.Menu(menuItemLabel);
+        menu.y = size.height*0.1;
+        this.addChild(menu);
         return true;
     },
     loadingCallBack:function(texture){
@@ -36,7 +46,8 @@ var HelloWorldLayer = cc.Layer.extend({
         this._labelPercent.setString(parseInt(percent)+"%");
 
         var index = this._numOfLoadedSprite-1;
-        var sprite = new cc.Sprite("res/Enemy11/"+res_test[index]);
+        // var sprite = new cc.Sprite("res/Enemy11/"+res_test[index]);
+        var sprite = new cc.Sprite(texture);
         sprite.x = this._numOfLoadedSprite*20;
         sprite.y = cc.winSize.height/2;
         this.addChild(sprite,-1);
@@ -48,6 +59,11 @@ var HelloWorldScene = cc.Scene.extend({
         this._super();
         var layer = new HelloWorldLayer();
         this.addChild(layer);
+    },
+    onExit:function () {
+        this._super();
+        cc.log("HelloWorldScene onExit");
+        cc.textureCache.removeAllTextures();
     }
 });
 

@@ -12,6 +12,7 @@
 
     "jsList" : [
         "src/resource.js",
+        "src/TempScene.js",
         "src/app.js"
     ]
 }

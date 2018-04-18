@@ -5,13 +5,14 @@
     "showFPS" : true,
     "frameRate" : 60,
     "id" : "gameCanvas",
-    "renderMode" : 0,
+    "renderMode" : 1,
     "engineDir":"frameworks/cocos2d-html5",
 
     "modules" : ["cocos2d"],
 
     "jsList" : [
         "src/resource.js",
+        "src/TempScene.js",
         "src/app.js"
     ]
 }
