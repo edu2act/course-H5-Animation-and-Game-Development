@@ -14,7 +14,6 @@ var Bullet = cc.Sprite.extend({
         //设置位置
         this.x += this.velocity.x*0.01;
         this.y += this.velocity.y*0.01;
-
         if(this.y > size.height){
             cc.pool.putInPool(this);
         }

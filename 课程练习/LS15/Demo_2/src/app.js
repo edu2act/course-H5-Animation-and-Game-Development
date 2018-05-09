@@ -38,13 +38,10 @@ var HelloWorldLayer = cc.Layer.extend({
                 node.setPosition(nodeX,nodeY);
                 bakeLayer.addChild(node);
         }
-        bakeLayer.setAnchorPoint(0,0);
-        bakeLayer.ignoreAnchor = false;
         bakeLayer.setPosition(0,0);
         this.addChild(bakeLayer,0);
-
         //测试开启bake和不开启的不同
-        //bakeLayer.bake();//在canvas模式下起作用，设置project.json中的renderMode为1
+        bakeLayer.bake();//在canvas模式下起作用，设置project.json中的renderMode为1
         //bakeLayer.unbake();
 
 
@@ -82,9 +79,10 @@ var HelloWorldLayer = cc.Layer.extend({
 
         helloLabel.runAction(
             cc.spawn(
-                cc.moveBy(2.5, cc.p(0, size.height - 40)),
+                // cc.moveBy(2.5, cc.p(0, size.height - 40)),
+                cc.rotateBy(2.5,90),
                 cc.tintTo(2.5,255,125,0)
-            )
+            ).repeatForever()
         );
 
         var menuItemLabel = new cc.MenuItemFont("测 试",function () {
@@ -93,7 +91,7 @@ var HelloWorldLayer = cc.Layer.extend({
         },this);
         menuItemLabel.setFontSize(50);
         var menu = new cc.Menu(menuItemLabel);
-        menu.y = size.height*0.1;
+        menu.y = size.height*0.8;
         this.addChild(menu);
         return true;
     },

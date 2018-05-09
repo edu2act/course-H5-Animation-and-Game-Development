@@ -5,15 +5,11 @@ var HelloWorldLayer = cc.Layer.extend({
         //////////////////////////////
         // 1. super init first
         this._super();
-
         var size = cc.winSize;
-
         //添加飞机和背景
         this.addPlaneAndBg();
-
         //背景滚屏回调
         this.schedule(this.bgCallback, 0.001);//背景回调
-
         return true;
     },
     bgCallback: function (dt) {

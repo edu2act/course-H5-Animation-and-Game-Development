@@ -1,4 +1,3 @@
-
 var HelloWorldLayer = cc.Layer.extend({
     _labelLoading:null,
     _labelPercent:null,
