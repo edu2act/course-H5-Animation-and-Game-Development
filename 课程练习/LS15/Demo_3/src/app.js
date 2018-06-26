@@ -2,7 +2,7 @@ var HelloWorldLayer = cc.Layer.extend({
     arr: [],//背景数组
     plane: null,
     ctor: function () {
-        //////////////////////////////
+        /////////////////////////////
         // 1. super init first
         this._super();
         var size = cc.winSize;
