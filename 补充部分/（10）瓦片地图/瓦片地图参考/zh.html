@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html style="font-size: 197.656px;"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="keywords" content="">
+    <meta name="content" content="">
+    <meta name="renderer" content="webkit">
+    <title></title>
+    <link type="text/css" rel="stylesheet" media="(max-width:960px)" href="zh_files/oth.css">
+    <link type="text/css" rel="stylesheet" media="(min-width:961px)" href="zh_files/style_002.css">
+    <link type="text/css" rel="stylesheet" href="zh_files/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="zh_files/hljs-github.css">
+    <link type="text/css" rel="stylesheet" href="zh_files/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="zh_files/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="zh_files/style.css">
+    <link rel="shortcut icon" type="image/ico" href="http://www.cocos.com/docs/native/assets/favicon.ico">
+  <script src="zh_files/is_signin.html" type="text/javascript"></script></head>
+  <body>
+  <script type="text/javascript" src="zh_files/get_sso_header.js"></script><link type="text/css" rel="stylesheet" href="zh_files/cocos_head.css"><div class="headerbg" id="cocos_top"><div class="wrap clearfix" style="height:30px;"><h1 class="logo"><a href="http://www.cocos.com/"><span>Cocos</span>官网</a></h1><div id="sso_user"><a href="https://passport.cocos.com/auth/signup?client_id=215&amp;url=http://www.cocos.com/docs/native/v3/tiled-map/zh.html" class="fr">注册</a><span class="fr shu"></span><a href="https://passport.cocos.com/sso/signin?client_id=215&amp;url=http://www.cocos.com/docs/native/v3/tiled-map/zh.html" class="fr">登录</a></div></div></div>
+
+    <header style="top: 30px;" class="">
+
+    <div class="header-bottm">
+      <div class="header-bottm-container">
+          <a class="logo" href="http://www.cocos.com/"><img src="zh_files/logo.png"></a>
+          <a class="language" href="http://www.cocos2d-x.org/" target="_blank">EN</a>
+          <a class="m-menu" href="javascript:;"><img src="zh_files/m-nav.png"></a>
+          <ul class="nav tt">
+              <li><a href="http://www.cocos.com/">首页</a></li>
+              <li><a href="http://www.cocos.com/?cat=10">博客</a></li>
+              <li><a href="http://www.cocos.com/creator">产品</a></li>
+              <li><a href="http://www.cocos.com/download">下载</a></li>
+              <li class="current"><a href="http://www.cocos.com/docs/" class="current">文档</a></li>
+              <li><a href="http://forum.cocos.com/">论坛</a></li>
+          </ul>
+      </div>
+    </div>
+
+  </header>
+      <div class="document-nav" style="z-index: 500; top: 30px;">
+      <ul>
+          <li class="now-tab">Cocos2d-x<b><i></i></b></li>
+          <li class="fl"><a href="http://www.cocos.com/docs/creator/" class="creator">Cocos Creator</a></li>
+          <li class="fl current"><a href="http://www.cocos.com/docs/cocos2d-x/" class="cocos2d">Cocos2d-x</a></li>
+          <li class="fl"><a href="http://www.cocos.com/docs/anysdk/">AnySDK</a></li>
+          <li class="fl" style="display:none;"><a href="#">其它</a></li>
+
+          <li class="fr"><span class="now-tab" href="javascript:;">CPP<b><i></i></b></span><a href="http://www.cocos.com/docs/native/index.html">CPP</a><a href="http://www.cocos.com/docs/js/index.html">JS</a><a href="http://www.cocos.com/docs/lua/index.html">Lua</a><a href="http://api.cocos.com/">API</a>
+          </li>
+ 
+      </ul>
+      </div>
+      <div class="document-container" style="min-height:500px;">
+      <div><button class="doc-index hidden-md hidden-lg"><a class="hidden-md hidden-lg" href="#" onclick="toggleNav()">文档索引</a></button></div>
+        <div class="full-wrap container">
+        <div class="row page">
+          <div id="navigation" class="col-md-4 col-lg-4 hidden-xs hidden-sm sidebar markdown-body">
+            <div class="inner">
+              <ul class="nav nav-list">
+                <li class="sidebar-header-1 "><h3><a href="" onclick="saveSidebarScroll()">综述</a></h3></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/about/about-us/zh.html" onclick="saveSidebarScroll()">关于我们</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/about/relationships-in-cocos2d-family/zh.html" onclick="saveSidebarScroll()">Cocos2d系列产品关系</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/easy-to-learn-api-style/zh.html" onclick="saveSidebarScroll()">Cocos2d-x API风格说明</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/getting-started/supported-platforms-and-programming-languages/zh.html" onclick="saveSidebarScroll()">Cocos2d-x支持的平台和编程语言</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/getting-started/architecture-and-directory-structure/zh.html" onclick="saveSidebarScroll()">架构和目录结构</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/about/support/zh.html" onclick="saveSidebarScroll()">获取支持</a></li>
+                <li class="sidebar-header-1 "><h3><a href="" onclick="saveSidebarScroll()">开发环境</a></h3></li>
+                <li class="  sidebar-header-2 "><a href="" onclick="saveSidebarScroll()">Mac 环境搭建</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/getting-started/setting-up-development-environments/mac-osx-environment-setup/how-to-run-helloworld-of-cocos2d-x-on-iphone-emulator/zh.html" onclick="saveSidebarScroll()">如何在iPhone模拟器上运行Cocos2d-x HelloWorld项目-v2.x</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/getting-started/setting-up-development-environments/mac-osx-environment-setup/setting-up-android-development-environment-on-mac-osx/zh.html" onclick="saveSidebarScroll()">Mac OS X平台搭建Android开发环境-v2.x</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/getting-started/setting-up-development-environments-on-mac-with-xcode/zh.html" onclick="saveSidebarScroll()">如何在Mac下搭建Cocos2d-x iPhone开发环境-v3.x</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/getting-started/setting-up-development-environments-on-mac-with-eclipse/zh.html" onclick="saveSidebarScroll()">如何在Mac下搭建Android开发环境-v3.x</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/getting-started/setting-up-development-environments/mac-osx-environment-setup/setup-emscripten-on-mac_osx-mountain-lion/zh.html" onclick="saveSidebarScroll()">在Mac OS X山狮系统安装Emscripten说明</a></li>
+                <li class="  sidebar-header-2 "><a href="" onclick="saveSidebarScroll()">Windows环境搭建</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/getting-started/setting-up-development-environments/windows-7-environment-setup/setup-win32-development-environment/zh.html" onclick="saveSidebarScroll()">在Windows7上搭建Cocos2d-x win32开发环境-v2.x</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/getting-started/setting-up-development-environments/windows-7-environment-setup/how-to-set-up-the-android-cocos2d-x-development-environment-on-windows7/zh.html" onclick="saveSidebarScroll()">如何在Windows7平台搭建Cocos2d-x Android开发环境-v2.x</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/getting-started/setting-up-development-environments-on-windows7-with-vs2013/zh.html" onclick="saveSidebarScroll()">在Windows7上搭建Cocos2d-x win32开发环境-v3.x</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/getting-started/setting-up-development-environments-on-windows7-with-eclipse/zh.html" onclick="saveSidebarScroll()">在Windows7平台搭建Cocos2d-x Android开发环境-v3.x</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/getting-started/setting-up-development-environments/windows-8-metro-environment-setup/setup-the-cocos2d-x-for-android-in-windows-8-metro/zh.html" onclick="saveSidebarScroll()">如何在WP8上搭建Cocos2d-x开发环境</a></li>
+                <li class="  sidebar-header-2 "><a href="" onclick="saveSidebarScroll()">Linux环境搭建</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/getting-started/setting-up-development-environments/linux-environment-setup/how-to-run-helloworld-and-tests-on-linux/zh.html" onclick="saveSidebarScroll()">如何在Linux平台运行HelloWorld及测试项目-v2.x</a></li>
+                <li class="  sidebar-header-2 "><a href="" onclick="saveSidebarScroll()">其他</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/getting-started/setting-up-development-environments/tizen-environment-setup/zh.html" onclick="saveSidebarScroll()">如何在Tizen平台中运行HelloWorld及测试项目</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/getting-started/setting-up-development-environments/blackberry-environment-setup/how-to-run-helloworld-and-tests-on-blackberry-tablet-OS/zh.html" onclick="saveSidebarScroll()">如何在黑莓平板系统中运行HelloWorld及测试项目</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/CCConsole/zh.html" onclick="saveSidebarScroll()">Cocos2d-x Console</a></li>
+                <li class="sidebar-header-1 "><h3><a href="" onclick="saveSidebarScroll()">基础概念</a></h3></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/basic-concepts/zh.html" onclick="saveSidebarScroll()">导演，场景，层，以及精灵</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/scheduler/zh.html" onclick="saveSidebarScroll()">调度器scheduler</a></li>
+                <li class="sidebar-header-1 "><h3><a href="" onclick="saveSidebarScroll()">图像渲染和动画</a></h3></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/coordinate-system/zh.html" onclick="saveSidebarScroll()">坐标系详解</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/action/zh.html" onclick="saveSidebarScroll()">动作</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/frame-animation/zh.html" onclick="saveSidebarScroll()">序列帧动画</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/spine/zh.html" onclick="saveSidebarScroll()">骨骼动画</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/transitions/zh.html" onclick="saveSidebarScroll()">场景转换</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/particle-system/zh.html" onclick="saveSidebarScroll()">粒子系统</a></li>
+                <li class="active  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/tiled-map/zh.html" onclick="saveSidebarScroll()">瓦片地图</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/fast-tilemap/zh.html" onclick="saveSidebarScroll()">Fast TileMap</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/multi-resolution/zh.html" onclick="saveSidebarScroll()">多分辨率支持策略和原理</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/ClippingNode/zh.html" onclick="saveSidebarScroll()">节点剪裁</a></li>
+                <li class="sidebar-header-1 "><h3><a href="" onclick="saveSidebarScroll()">数据结构</a></h3></li>
+                <li class="  sidebar-header-2 "><a href="" onclick="saveSidebarScroll()">3.0数据结构</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/data-structure/vector/zh.html" onclick="saveSidebarScroll()">Vector</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/data-structure/map/zh.html" onclick="saveSidebarScroll()">Map</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/data-structure/value/zh.html" onclick="saveSidebarScroll()">Value</a></li>
+                <li class="  sidebar-header-2 "><a href="" onclick="saveSidebarScroll()">2.0数据结构</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/basic-concepts/data-structure/array/zh.html" onclick="saveSidebarScroll()">CCArray</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/basic-concepts/data-structure/dictionary/zh.html" onclick="saveSidebarScroll()">CCDictionary</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/basic-concepts/data-structure/string/zh.html" onclick="saveSidebarScroll()">CCString</a></li>
+                <li class="sidebar-header-1 "><h3><a href="" onclick="saveSidebarScroll()">声音</a></h3></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/audio-and-effect/zh.html" onclick="saveSidebarScroll()">声音和音效</a></li>
+                <li class="sidebar-header-1 "><h3><a href="" onclick="saveSidebarScroll()">内存管理</a></h3></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/memory/refcount-autoreleasepool/zh.html" onclick="saveSidebarScroll()">Cocos2d-x的引用计数和AutoreleasePool</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/memory/texture-cache/zh.html" onclick="saveSidebarScroll()">纹理缓存 Texture Cache</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/memory/max-texture-size/zh.html" onclick="saveSidebarScroll()">各平台硬件所允许的最大纹理尺寸</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/optimizations/how-to-optimise-memory-usage/zh.html" onclick="saveSidebarScroll()">如何优化内存使用</a></li>
+                <li class="sidebar-header-1 "><h3><a href="" onclick="saveSidebarScroll()">人机交互</a></h3></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/event-dispatcher/zh.html" onclick="saveSidebarScroll()">事件分发机制 Event Dispatcher</a></li>
+                <li class="sidebar-header-1 "><h3><a href="" onclick="saveSidebarScroll()">网络</a></h3></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/httpclient/zh.html" onclick="saveSidebarScroll()">如何使用HttpClient</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/httpclient-session/zh.html" onclick="saveSidebarScroll()">HttpClient session</a></li>
+                <li class="sidebar-header-1 "><h3><a href="" onclick="saveSidebarScroll()">数据存储</a></h3></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/sqlite/zh.html" onclick="saveSidebarScroll()">SQLite集成与用法</a></li>
+                <li class="sidebar-header-1 "><h3><a href="" onclick="saveSidebarScroll()">数据解析</a></h3></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/json-parse/zh.html" onclick="saveSidebarScroll()">Cocos2d-x 3.0 Json用法</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/xml-parse/zh.html" onclick="saveSidebarScroll()">Cocos2d-x xml解析</a></li>
+                <li class="sidebar-header-1 "><h3><a href="" onclick="saveSidebarScroll()">各系统平台上的语言转换</a></h3></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/scripting-and-translating-between-programming-languages/for-c++-programmers/moving-from-objective-c-to-c++/zh.html" onclick="saveSidebarScroll()">从Objective-C转战C++</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/scripting-and-translating-between-programming-languages/easy-ndk/how-to-work-on-android-C++-Java/zh.html" onclick="saveSidebarScroll()">Android平台开发实践（C++/Java）</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/scripting-and-translating-between-programming-languages/easy-ndk/how-to-work-on-ios-C++-and-objective-c/zh.html" onclick="saveSidebarScroll()">iOS平台开发实践（C++/Object-C）</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/optimizations/best-practice-of-cross-platform-games/zh.html" onclick="saveSidebarScroll()">跨平台游戏最佳做法</a></li>
+                <li class="sidebar-header-1 "><h3><a href="" onclick="saveSidebarScroll()">开发后期和第三方集成</a></h3></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/lua/lua-remote-debug-via-zerobrane/zh.html" onclick="saveSidebarScroll()">如何使用ZeroBrane Studio远程调试Cocos2d-x的Lua脚本</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/scripting-and-translating-between-programming-languages/lua-binding/how-to-bind-c++-to-lua/zh.html" onclick="saveSidebarScroll()">如何将C++绑定至Lua</a></li>
+                <li class="sidebar-header-1 "><h3><a href="" onclick="saveSidebarScroll()">发布</a></h3></li>
+                <li class="  sidebar-header-2 "><a href="" onclick="saveSidebarScroll()">第三方库集成</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/sdk-integration/android-jni/zh.html" onclick="saveSidebarScroll()">Android: 如何让Java和C++接口互相调用：JNI使用指南</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/scripting-and-translating-between-programming-languages/for-c++-programmers/how-to-use-jni/zh.html" onclick="saveSidebarScroll()">如何使用JNI(简要)</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/sdk-integration/wp8-webbrowser/zh.html" onclick="saveSidebarScroll()">Windows Phone 8: 通过浏览器控件添加支付宝</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/sdk-integration/wp8-thirdSDK/zh.html" onclick="saveSidebarScroll()">Windows Phone 8: 如何集成第三方SDK</a></li>
+                <li class="  sidebar-header-2 "><a href="" onclick="saveSidebarScroll()">性能测试</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/benchmark-reports/performace-test-of-cocos2d-x-071-on-iod-devices/zh.html" onclick="saveSidebarScroll()">iOS设备Cocos2d-x 0.7.1性能测试</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/benchmark-reports/performance-test-of-cocos2d-x-on-android-devices/zh.html" onclick="saveSidebarScroll()">Android设备Cocos2d-x性能测试</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/benchmark-reports/performance-test-of-edge-version-on-android-devices/zh.html" onclick="saveSidebarScroll()">Android设备Edge版本性能测试</a></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v2/benchmark-reports/performance-test-of-edge-version-on-ios-devices/zh.html" onclick="saveSidebarScroll()">iOS设备性能测试</a></li>
+                <li class="sidebar-header-1 "><h3><a href="" onclick="saveSidebarScroll()">虚拟现实VR</a></h3></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/vr-plugin/zh.html" onclick="saveSidebarScroll()">VR插件的集成与使用</a></li>
+                <li class="sidebar-header-1 "><h3><a href="" onclick="saveSidebarScroll()">Tizen</a></h3></li>
+                <li class="  sidebar-header-3 "><a href="http://www.cocos.com/docs/native/v3/tizen/zh.html" onclick="saveSidebarScroll()">Tizen中文文档</a></li>
+              </ul>
+            </div>
+          </div>
+          <div id="main" class="main col-md-8 col-lg-8">
+
+          <ul id="mobile-nav" class="nav nav-list" style="display: none;">
+            <li class="sidebar-header-1 "><h3><a onclick="saveScroll()" href="">综述</a></h3></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/about/about-us/zh.html">关于我们</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/about/relationships-in-cocos2d-family/zh.html">Cocos2d系列产品关系</a></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/easy-to-learn-api-style/zh.html">Cocos2d-x API风格说明</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/getting-started/supported-platforms-and-programming-languages/zh.html">Cocos2d-x支持的平台和编程语言</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/getting-started/architecture-and-directory-structure/zh.html">架构和目录结构</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/about/support/zh.html">获取支持</a></li>
+            <li class="sidebar-header-1 "><h3><a onclick="saveScroll()" href="">开发环境</a></h3></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="">Mac 环境搭建</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/getting-started/setting-up-development-environments/mac-osx-environment-setup/how-to-run-helloworld-of-cocos2d-x-on-iphone-emulator/zh.html">如何在iPhone模拟器上运行Cocos2d-x HelloWorld项目-v2.x</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/getting-started/setting-up-development-environments/mac-osx-environment-setup/setting-up-android-development-environment-on-mac-osx/zh.html">Mac OS X平台搭建Android开发环境-v2.x</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/getting-started/setting-up-development-environments-on-mac-with-xcode/zh.html">如何在Mac下搭建Cocos2d-x iPhone开发环境-v3.x</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/getting-started/setting-up-development-environments-on-mac-with-eclipse/zh.html">如何在Mac下搭建Android开发环境-v3.x</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/getting-started/setting-up-development-environments/mac-osx-environment-setup/setup-emscripten-on-mac_osx-mountain-lion/zh.html">在Mac OS X山狮系统安装Emscripten说明</a></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="">Windows环境搭建</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/getting-started/setting-up-development-environments/windows-7-environment-setup/setup-win32-development-environment/zh.html">在Windows7上搭建Cocos2d-x win32开发环境-v2.x</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/getting-started/setting-up-development-environments/windows-7-environment-setup/how-to-set-up-the-android-cocos2d-x-development-environment-on-windows7/zh.html">如何在Windows7平台搭建Cocos2d-x Android开发环境-v2.x</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/getting-started/setting-up-development-environments-on-windows7-with-vs2013/zh.html">在Windows7上搭建Cocos2d-x win32开发环境-v3.x</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/getting-started/setting-up-development-environments-on-windows7-with-eclipse/zh.html">在Windows7平台搭建Cocos2d-x Android开发环境-v3.x</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/getting-started/setting-up-development-environments/windows-8-metro-environment-setup/setup-the-cocos2d-x-for-android-in-windows-8-metro/zh.html">如何在WP8上搭建Cocos2d-x开发环境</a></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="">Linux环境搭建</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/getting-started/setting-up-development-environments/linux-environment-setup/how-to-run-helloworld-and-tests-on-linux/zh.html">如何在Linux平台运行HelloWorld及测试项目-v2.x</a></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="">其他</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/getting-started/setting-up-development-environments/tizen-environment-setup/zh.html">如何在Tizen平台中运行HelloWorld及测试项目</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/getting-started/setting-up-development-environments/blackberry-environment-setup/how-to-run-helloworld-and-tests-on-blackberry-tablet-OS/zh.html">如何在黑莓平板系统中运行HelloWorld及测试项目</a></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/CCConsole/zh.html">Cocos2d-x Console</a></li>
+            <li class="sidebar-header-1 "><h3><a onclick="saveScroll()" href="">基础概念</a></h3></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/basic-concepts/zh.html">导演，场景，层，以及精灵</a></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/scheduler/zh.html">调度器scheduler</a></li>
+            <li class="sidebar-header-1 "><h3><a onclick="saveScroll()" href="">图像渲染和动画</a></h3></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/coordinate-system/zh.html">坐标系详解</a></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/action/zh.html">动作</a></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/frame-animation/zh.html">序列帧动画</a></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/spine/zh.html">骨骼动画</a></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/transitions/zh.html">场景转换</a></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/particle-system/zh.html">粒子系统</a></li>
+            <li class="active sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/tiled-map/zh.html">瓦片地图</a></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/fast-tilemap/zh.html">Fast TileMap</a></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/multi-resolution/zh.html">多分辨率支持策略和原理</a></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/ClippingNode/zh.html">节点剪裁</a></li>
+            <li class="sidebar-header-1 "><h3><a onclick="saveScroll()" href="">数据结构</a></h3></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="">3.0数据结构</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/data-structure/vector/zh.html">Vector</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/data-structure/map/zh.html">Map</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/data-structure/value/zh.html">Value</a></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="">2.0数据结构</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/basic-concepts/data-structure/array/zh.html">CCArray</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/basic-concepts/data-structure/dictionary/zh.html">CCDictionary</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/basic-concepts/data-structure/string/zh.html">CCString</a></li>
+            <li class="sidebar-header-1 "><h3><a onclick="saveScroll()" href="">声音</a></h3></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/audio-and-effect/zh.html">声音和音效</a></li>
+            <li class="sidebar-header-1 "><h3><a onclick="saveScroll()" href="">内存管理</a></h3></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/memory/refcount-autoreleasepool/zh.html">Cocos2d-x的引用计数和AutoreleasePool</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/memory/texture-cache/zh.html">纹理缓存 Texture Cache</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/memory/max-texture-size/zh.html">各平台硬件所允许的最大纹理尺寸</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/optimizations/how-to-optimise-memory-usage/zh.html">如何优化内存使用</a></li>
+            <li class="sidebar-header-1 "><h3><a onclick="saveScroll()" href="">人机交互</a></h3></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/event-dispatcher/zh.html">事件分发机制 Event Dispatcher</a></li>
+            <li class="sidebar-header-1 "><h3><a onclick="saveScroll()" href="">网络</a></h3></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/httpclient/zh.html">如何使用HttpClient</a></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/httpclient-session/zh.html">HttpClient session</a></li>
+            <li class="sidebar-header-1 "><h3><a onclick="saveScroll()" href="">数据存储</a></h3></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/sqlite/zh.html">SQLite集成与用法</a></li>
+            <li class="sidebar-header-1 "><h3><a onclick="saveScroll()" href="">数据解析</a></h3></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/json-parse/zh.html">Cocos2d-x 3.0 Json用法</a></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/xml-parse/zh.html">Cocos2d-x xml解析</a></li>
+            <li class="sidebar-header-1 "><h3><a onclick="saveScroll()" href="">各系统平台上的语言转换</a></h3></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/scripting-and-translating-between-programming-languages/for-c++-programmers/moving-from-objective-c-to-c++/zh.html">从Objective-C转战C++</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/scripting-and-translating-between-programming-languages/easy-ndk/how-to-work-on-android-C++-Java/zh.html">Android平台开发实践（C++/Java）</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/scripting-and-translating-between-programming-languages/easy-ndk/how-to-work-on-ios-C++-and-objective-c/zh.html">iOS平台开发实践（C++/Object-C）</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/optimizations/best-practice-of-cross-platform-games/zh.html">跨平台游戏最佳做法</a></li>
+            <li class="sidebar-header-1 "><h3><a onclick="saveScroll()" href="">开发后期和第三方集成</a></h3></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/lua/lua-remote-debug-via-zerobrane/zh.html">如何使用ZeroBrane Studio远程调试Cocos2d-x的Lua脚本</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/scripting-and-translating-between-programming-languages/lua-binding/how-to-bind-c++-to-lua/zh.html">如何将C++绑定至Lua</a></li>
+            <li class="sidebar-header-1 "><h3><a onclick="saveScroll()" href="">发布</a></h3></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="">第三方库集成</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/sdk-integration/android-jni/zh.html">Android: 如何让Java和C++接口互相调用：JNI使用指南</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/scripting-and-translating-between-programming-languages/for-c++-programmers/how-to-use-jni/zh.html">如何使用JNI(简要)</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/sdk-integration/wp8-webbrowser/zh.html">Windows Phone 8: 通过浏览器控件添加支付宝</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/sdk-integration/wp8-thirdSDK/zh.html">Windows Phone 8: 如何集成第三方SDK</a></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="">性能测试</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/benchmark-reports/performace-test-of-cocos2d-x-071-on-iod-devices/zh.html">iOS设备Cocos2d-x 0.7.1性能测试</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/benchmark-reports/performance-test-of-cocos2d-x-on-android-devices/zh.html">Android设备Cocos2d-x性能测试</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/benchmark-reports/performance-test-of-edge-version-on-android-devices/zh.html">Android设备Edge版本性能测试</a></li>
+            <li class=" sidebar-header-4"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v2/benchmark-reports/performance-test-of-edge-version-on-ios-devices/zh.html">iOS设备性能测试</a></li>
+            <li class="sidebar-header-1 "><h3><a onclick="saveScroll()" href="">虚拟现实VR</a></h3></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/vr-plugin/zh.html">VR插件的集成与使用</a></li>
+            <li class="sidebar-header-1 "><h3><a onclick="saveScroll()" href="">Tizen</a></h3></li>
+            <li class=" sidebar-header-3"><a onclick="saveScroll()" href="http://www.cocos.com/docs/native/v3/tizen/zh.html">Tizen中文文档</a></li>
+          </ul>
+          <article class="markdown-body"><p>#瓦片地图</p>
+<p>在游戏开发过程中，我们会遇到超过屏幕大小的地图，例如即时战略游戏，使得玩家可以在地图中滚动游戏画面。这类游戏通常会有丰富的背景元素，如果直接使用背景图切换的方式，需要为每个不同的场景准备一张背景图，而且每个背景图都不小，这样会造成资源浪费。</p>
+<p>瓦片地图就是为了解决这问题而产生的。一张大的世界地图或者背景图可以由几种地形来表示，每种地形对应一张小的的图片，我们称这些小的地形图片为瓦片。把这些瓦片拼接在一起，一个完整的地图就组合出来了，这就是瓦片地图的原理。</p>
+<p>##TileMap方案</p>
+<p>在Cocos2d-x中，瓦片地图实现的是TileMap方案，TileMap要求每个瓦片占据地图上一个四边形或六边形的区域。把不同的瓦片拼接
+在一起，就可以组成完整的地图了。我们需要很多较小的纹理来创建瓦片。通常我们会将这些较小的纹理放在一张图片中，这样做会提高绘图性能。</p>
+<p>##瓦片地图编辑器</p>
+<p>Cocos2d-x支持由瓦片地图编辑器Tiled Map Editor制作并保存为TMX格式的地图。Tiled Map Editor是一个开源项目，支持Windows、Linux及Mac OS X多个操作系统，我们可以从<a href="http://www.mapeditor.org/">官网下载</a>到编辑器的Java和QT版本。</p>
+<p>如何使用Tiled工具建立地图可以参考以下文章：</p>
+<p><a href="http://cn.cocos2d-x.org/tutorial/show?id=1205">如何使用Cocos2dx3.0制作基于tilemap的游戏</a></p>
+<p>###地图方向</p>
+<p>Tiled地图支持直角鸟瞰地图(90°地图)、等距斜视地图（斜45°地图）和六边形地图，不支持左右或上下边界的六边形地图。</p>
+<p>###地图资源</p>
+<ul class="list">
+<li>建议瓦片地图素材大小为32*32的倍数</li>
+<li>瓦片素材组与其他图片不能混合使用</li>
+<li>只有瓦片素材图能被导入TMX文件</li>
+<li>每个Layer最多支持1套瓦片素材组。</li>
+</ul>
+<p>###瓦片层</p>
+<ul class="list">
+<li>TMX文件中瓦片层的数量没有上限</li>
+<li>每一个瓦片层只能由一种瓦片素材组成</li>
+<li>每一个瓦片层可以被TMXLayer类表示-为SpriteSheet的子类</li>
+<li>每一个单一的瓦片被Sprite表示-父节点为TMXLayer</li>
+</ul>
+<p>###对象层</p>
+<ul class="list">
+<li>瓦片地图支持对象组</li>
+<li>用来添加除背景以外的游戏元素-道具、障碍物等</li>
+<li>对象组中的对象在TMX文件中以键值对形式存在，因此可以直接在TMX文件中对他进行修改</li>
+</ul>
+<p>###瓦片地图坐标系</p>
+<p>对于一个16*16的瓦片地图文件的坐标系统为</p>
+<ul class="list">
+<li>(0, 0): 左上角</li>
+<li>(15, 15): 右下角</li>
+</ul>
+<p class="img-container"><img src="zh_files/tiledmap.png" alt="tiledmap"></p>
+<p>##在Cocos2d-x中使用TMX</p>
+<p>###创建TMX节点</p>
+<pre class="hljs"><code>    TMXTiledMap *<span class="hljs-built_in">map</span> = TMXTiledMap::create(<span class="hljs-string">"bg.tmx"</span>);
+    addChild(<span class="hljs-built_in">map</span>, <span class="hljs-number">0</span>);</code></pre><p>###遍历子节点</p>
+<pre class="hljs"><code>    <span class="hljs-type">Vector</span>&lt;<span class="hljs-type">Node</span>*&gt; pChildrenArray = map-&gt;getChildren();
+
+    <span class="hljs-type">SpriteBatchNode</span>* child = <span class="hljs-type">NULL</span>;
+
+    <span class="hljs-type">Ref</span>* pObject = <span class="hljs-type">NULL</span>;
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-type">Vector</span>&lt;<span class="hljs-type">Node</span>*&gt;::<span class="hljs-keyword">iterator</span> it = pChildrenArray.begin(); it != pChildrenArray.<span class="hljs-keyword">end</span>(); it++) {
+        pObject = *it;
+        child = (<span class="hljs-type">SpriteBatchNode</span>*)pObject;
+
+    }</code></pre><p>###获取/删除一个瓦片</p>
+<pre class="hljs"><code>    TMXLayer* layer = map-&gt;getLayer(<span class="hljs-string">"layer0"</span>)<span class="hljs-comment">;</span>
+    Sprite* tile0 = layer-&gt;getTileAt(<span class="hljs-name">Point</span>(<span class="hljs-number">1</span>, <span class="hljs-number">15</span>))<span class="hljs-comment">;</span>
+    layer-&gt;removeTileAt(<span class="hljs-name">Point</span>(<span class="hljs-number">1</span>, <span class="hljs-number">15</span>))<span class="hljs-comment">;</span></code></pre><p>###遍历对象层中对象</p>
+<pre class="hljs"><code>    <span class="hljs-type">TMXObjectGroup</span>* objectGroup = map-&gt;getObjectGroup(<span class="hljs-string">"center"</span>);
+    <span class="hljs-type">ValueVector</span> <span class="hljs-keyword">object</span> = objectGroup-&gt;getObjects();
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-type">ValueVector</span>::<span class="hljs-keyword">iterator</span> it = <span class="hljs-keyword">object</span>.begin(); it != <span class="hljs-keyword">object</span>.<span class="hljs-keyword">end</span>(); it++) {
+        <span class="hljs-type">Value</span> obj = *it;
+        <span class="hljs-type">ValueMap</span> map = obj.asValueMap();
+        log(<span class="hljs-string">"x = %d y = %d"</span>, map.at(<span class="hljs-string">"x"</span>).asInt(), map.at(<span class="hljs-string">"y"</span>).asInt());
+    }</code></pre>            </article>
+          </div>
+          </div>
+        </div>
+      </div>
+<footer>
+      <div class="footer-container">
+        <ul>
+            <li><a href="http://www.cocos.com/category/blog/all">博客</a></li>
+            <li><a href="http://www.cocos.com/?cat=10">新闻</a></li>
+            <li><a href="http://www.cocos.com/?cat=12">活动</a></li>
+            <li><a href="http://www.cocos.com/?cat=14">技术</a></li>
+        </ul>
+        <ul>
+            <li><a href="http://www.cocos.com/creator">产品</a></li>
+            <li><a href="http://www.cocos.com/creator">Cocos Creator</a></li>
+            <li><a href="http://www.cocos.com/cocos2dx">Cocos2d-x</a></li>
+            <li><a href="http://www.cocos.com/anysdk">AnySDK</a></li>
+        </ul>
+        <ul>
+            <li><a href="http://www.cocos.com/download">下载</a></li>
+            <li><a href="http://www.cocos.com/download">Cocos Creator</a></li>
+            <li><a href="http://www.cocos.com/download">Cocos2d-x</a></li>
+            <li><a href="http://www.cocos.com/download">AnySDK</a></li>
+        </ul>
+        <ul>
+            <li><a href="http://www.cocos.com/docs/">文档</a></li>
+            <li><a href="http://www.cocos.com/docs/">帮助文档</a></li>
+            <li><a href="http://www.cocos.com/docs/tutorial">教程</a></li>
+            <li><a href="http://www.cocos.com/docs/api">API</a></li>
+        </ul>
+        <ul>
+            <li><a href="http://forum.cocos.com/">论坛</a></li>
+            <li><a href="http://forum.cocos.com/">技术论坛</a></li>
+        </ul>
+        <ul>
+          <li><a href="javascript:;">联系我们</a></li>
+          <li class="contact">
+            <a href="http://weibo.com/cocos2dx?is_hot=1"></a>
+            <a href="javascript:;" class="wechat"><img src="zh_files/wechat.png"></a>
+            <a href="javascript:;" class="qq"><img src="zh_files/qq.png"></a>
+          </li>
+          <li><a>技术咨询邮箱：support@cocos.com</a></li>
+        </ul>
+      </div>
+      <div class="bah">
+          2015 @ Cocos.com 沪ICP备14008742号-5
+      </div>
+  </footer>
+  <script src="zh_files/anchor.js"></script>
+  <script src="zh_files/scroll-restore.js"></script>
+  <script src="zh_files/zepto.js"></script>
+  <script type="text/javascript" src="zh_files/main.js"></script>
+  <script>
+      document.querySelector('html').style.fontSize = document.documentElement.clientWidth / 320 * 50 + 'px';
+    </script>
+
+  <script>
+    anchors.add('article h2, article h3, article h4');
+  </script>
+
+    <input id="client_id" value="215" type="hidden">
+    <input id="sso_server_url" value="https://passport.cocos.com/" type="hidden">
+        <input id="base_url" value="http://www.cocos.com/" type="hidden">
+<script type="text/javascript" src="zh_files/ssoclient.js"></script>
+  
+
+</body></html>

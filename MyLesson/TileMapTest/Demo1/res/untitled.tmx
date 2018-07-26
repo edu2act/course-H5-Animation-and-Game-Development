@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.4" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="32" tileheight="32" infinite="0" nextobjectid="2">
+ <properties>
+  <property name="MapP1" value="xxx"/>
+  <property name="地图属性" value="123"/>
+  <property name="地图属性2" value="aaa"/>
+ </properties>
+ <tileset firstgid="1" name="tmw_desert_spacing" tilewidth="32" tileheight="32" spacing="1" margin="1" tilecount="48" columns="8">
+  <image source="tmw_desert_spacing.png" width="265" height="199"/>
+  <tile id="0">
+   <properties>
+    <property name="tile1" value="tilt111"/>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="12">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="13">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="14">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="16">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="17">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="18">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="19">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="20">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="21">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="22">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="23">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="24">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="25">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="26">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="27">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="28">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="30">
+   <properties>
+    <property name="type" value="eat"/>
+   </properties>
+  </tile>
+  <tile id="31">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="32">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="33">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="34">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="35">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="36">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="37">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="38">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="39">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="40">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="41">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="42">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="43">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="44">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="45">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="46">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="47">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="LayerBG" width="20" height="20">
+  <properties>
+   <property name="aaa" value="xxx"/>
+   <property name="bbb" type="int" value="222"/>
+   <property name="type" value="clock"/>
+  </properties>
+  <data encoding="csv">
+30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+30,30,30,30,30,30,30,30,30,30,31,30,30,31,30,30,30,31,30,30,
+30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+30,30,30,30,30,30,10,10,10,30,30,30,30,10,10,30,30,30,30,30,
+30,30,30,30,30,10,10,30,10,10,30,30,30,30,10,30,30,31,30,30,
+30,30,30,30,10,10,30,30,30,30,30,30,30,30,10,30,30,30,30,30,
+30,30,30,30,10,30,30,30,30,30,31,30,30,10,10,30,30,30,30,30,
+30,30,30,30,10,10,30,30,30,30,30,30,30,10,30,31,30,30,30,30,
+30,30,30,30,30,10,10,30,30,31,30,30,30,10,30,30,30,30,30,30,
+30,30,30,30,30,30,10,10,30,30,31,30,31,10,30,30,30,30,30,30,
+30,30,30,30,30,30,30,30,30,30,30,30,30,10,30,30,30,30,30,30,
+30,30,30,30,30,30,30,30,10,10,10,10,10,10,30,31,30,30,30,30,
+30,30,30,30,30,30,30,30,10,30,30,30,30,30,31,30,30,30,30,30,
+30,30,30,30,30,31,30,30,10,30,30,30,30,30,30,30,30,30,30,30,
+30,30,30,30,30,30,30,30,30,30,30,30,31,30,30,30,30,30,30,30,
+30,30,30,30,30,30,30,30,30,31,30,30,30,30,30,30,30,30,30,30,
+30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30
+</data>
+ </layer>
+ <layer name="块层 2" width="20" height="20" visible="0">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,38,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,38,0,
+0,0,0,38,0,0,0,0,0,0,0,0,0,0,0,0,0,38,38,0,
+0,0,0,38,0,0,0,0,0,0,0,0,0,0,0,0,0,38,0,0,
+0,0,38,38,0,0,0,0,0,0,0,0,0,0,0,0,0,38,0,0,
+0,0,38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,38,0,0,
+0,0,38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,38,0,0,
+0,0,38,38,0,0,0,0,0,0,0,0,0,0,0,0,38,38,0,0,
+0,0,0,38,0,0,0,0,0,0,0,0,0,0,0,38,38,0,0,0,
+0,0,0,38,38,38,38,0,0,0,0,0,38,38,38,38,0,0,0,0,
+0,0,0,0,0,0,0,38,38,38,38,38,38,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup name="objects" visible="0">
+  <properties>
+   <property name="type" value="objects"/>
+  </properties>
+  <object id="1" name="player" x="96" y="98" width="30" height="30"/>
+ </objectgroup>
+</map>

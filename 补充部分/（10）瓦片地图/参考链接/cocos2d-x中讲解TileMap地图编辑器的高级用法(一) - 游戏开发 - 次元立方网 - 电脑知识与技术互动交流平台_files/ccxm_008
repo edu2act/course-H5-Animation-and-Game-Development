@@ -1,0 +1,5 @@
+BAIDU_SSP_define({"queryid" : "9b9c6f18f50fa6de","tuid" : "u2477974_0","placement" : {"basic" : {"cname":"xuli2008_cpr","conBackEnv":1,"flowType":1,"mediumType":1,"rspFormat":1,"sellType":2,"sspId":1,"tuId":9223372032562286486,"userId":2700374}
+,"container" : {"anchoredType":1,"floated":{},"height":60,"sizeType":1,"slide":{},"width":640}
+,"fillstyle" : {"backgroundColor":"#FFFFFF","cloudTheme":{"skin":5,"stid":5},"elements":[0,1,2,4,5],"flush":0,"layout":[1,2],"lu":{"borderWidth":0,"number":0},"opacity":0,"search":{},"styleType":2,"txt":{"align":1,"bborder":0,"cbackground":"#FFFFFF","cborder":"#FFFFFF","cdesc":"#444444","cflush":"#e10900","ctitle":"#0000ff","curl":"#008000","fontName":"宋体","fontSize":12,"number":3},"video":{}}
+,"userdefine" : "|cpro_cpro_lu=1,#dfe4f9,#000000,宋体|cpro_layout_filter=image|cpro_template=text_default_640_60|cpro_version=2.0","complement_type" : 2,"update" : "1451923760_1458044077"},"extends" : {"ssph":60,"sspw":640}
+,"pdb_deliv" : {"deliv_id" : "0","deliv_des" : {},"brandad" : 0},"order_deliv" : {"deliv_id" : "0","demand_id" : "0"},"rtb_deliv" : {"deliv_id" : "0","demand_id" : "2477974"},"media_protect" : ""});

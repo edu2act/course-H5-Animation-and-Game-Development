@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.4" orientation="orthogonal" renderorder="right-down" width="32" height="20" tilewidth="32" tileheight="32" infinite="0" nextobjectid="8">
+ <properties>
+  <property name="tiledMapPro_1" value="ppp"/>
+  <property name="tiledMapPro_2" value="qqq"/>
+ </properties>
+ <tileset firstgid="1" name="tmw_desert_spacing" tilewidth="32" tileheight="32" spacing="1" margin="1" tilecount="48" columns="8">
+  <image source="tmw_desert_spacing.png" width="265" height="199"/>
+  <tile id="0">
+   <properties>
+    <property name="tiled_1_p1" value="111"/>
+    <property name="tiled_1_p2" value="222"/>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="12">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="13">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="14">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="16">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="17">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="18">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="19">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="20">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="21">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="22">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="23">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="24">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="25">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="26">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="27">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="28">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="30">
+   <properties>
+    <property name="type" value="eat"/>
+   </properties>
+  </tile>
+  <tile id="31">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="32">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="33">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="34">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="35">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="36">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="40">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="41">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="42">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="43">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="44">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+  <tile id="45">
+   <properties>
+    <property name="type" value="block"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="LayerBG" width="32" height="20">
+  <properties>
+   <property name="Layer_p1" value="Layer_p1_value"/>
+  </properties>
+  <data encoding="csv">
+30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,4,23,23,23,23,30,23,23,23,5,30,30,30,30,
+30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,16,31,31,31,31,31,31,30,30,14,30,30,30,30,
+30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,16,31,30,31,30,30,30,31,30,14,30,30,30,30,
+30,30,30,10,10,10,10,10,30,30,30,30,30,30,30,30,30,30,16,31,31,31,31,31,31,31,30,14,30,30,30,30,
+30,30,30,10,30,30,30,30,30,30,30,30,30,30,30,30,30,30,16,30,31,31,31,31,31,31,30,14,30,30,30,30,
+30,30,30,10,30,30,30,30,30,30,30,30,30,30,30,30,30,30,12,7,7,7,7,7,7,7,7,13,30,30,30,30,
+30,30,30,10,30,30,30,31,30,31,30,30,30,30,30,30,30,30,30,30,34,34,34,34,30,30,30,30,30,30,30,30,
+30,30,30,10,30,31,30,30,30,30,30,30,30,30,30,30,30,30,30,30,34,30,30,30,30,30,30,30,30,30,30,30,
+30,30,30,10,30,30,30,31,30,30,30,30,30,30,30,30,30,30,30,30,34,30,30,30,30,30,30,30,30,30,30,30,
+30,30,30,10,10,10,10,10,10,30,30,30,30,30,34,34,34,34,30,30,34,30,30,30,30,30,30,34,30,30,30,30,
+30,30,30,10,10,10,10,10,10,30,30,30,34,34,34,30,30,34,30,30,34,30,30,30,30,30,30,34,30,30,30,30,
+30,30,30,30,30,30,30,30,30,30,30,30,34,30,30,30,30,34,30,30,34,30,30,30,30,30,30,34,34,30,30,30,
+30,30,30,30,30,15,15,30,30,30,30,30,30,30,31,30,30,34,30,30,34,30,30,30,30,30,30,30,34,30,30,30,
+30,30,30,15,15,15,30,30,30,30,30,30,30,30,30,30,30,34,30,30,34,30,30,30,30,30,30,30,34,30,30,30,
+30,30,30,15,30,30,30,31,31,31,31,30,15,15,15,30,30,34,30,30,34,30,30,30,30,30,30,30,34,30,30,30,
+30,30,30,15,30,30,31,30,31,30,30,30,15,30,30,30,34,34,30,30,34,34,34,34,34,34,34,34,34,30,30,30,
+30,30,30,15,15,30,30,31,30,30,30,30,15,30,30,34,34,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+30,30,30,30,15,15,15,15,15,15,15,15,30,30,30,34,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,
+30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30
+</data>
+ </layer>
+ <objectgroup name="objects">
+  <properties>
+   <property name="type" value="objects_type_values"/>
+  </properties>
+  <object id="3" name="player" x="96" y="32" width="32" height="32">
+   <properties>
+    <property name="type" value="hero"/>
+   </properties>
+  </object>
+  <object id="4" name="enemy" x="320" y="128" width="64" height="64">
+   <properties>
+    <property name="type" value="enemy"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

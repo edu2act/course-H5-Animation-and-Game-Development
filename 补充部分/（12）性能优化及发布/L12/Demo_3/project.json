@@ -1,0 +1,19 @@
+{
+    "project_type": "javascript",
+
+    "debugMode" : 1,
+    "showFPS" : true,
+    "frameRate" : 60,
+    "id" : "gameCanvas",
+    "renderMode" : 0,
+    "engineDir":"frameworks/cocos2d-html5",
+
+    "modules" : ["cocos2d","ccpool"],
+
+    "jsList" : [
+        "src/resource.js",
+        "src/Plane.js",
+        "src/Bullet.js",
+        "src/app.js"
+    ]
+}

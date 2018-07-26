@@ -1,0 +1,1 @@
+define("wkview:widget/resource_recom/resource_recom.js",function(){});

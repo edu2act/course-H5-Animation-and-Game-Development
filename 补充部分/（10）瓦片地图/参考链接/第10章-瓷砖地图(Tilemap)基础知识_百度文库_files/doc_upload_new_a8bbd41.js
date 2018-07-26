@@ -1,0 +1,1 @@
+define("wkview:widget/doc_upload_new/doc_upload_new.js",function(){});
