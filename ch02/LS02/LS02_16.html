@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
@@ -45,21 +45,21 @@
             ctx.fillStyle = 'red';
             ctx.arc(cx, cy, radius, 0, Math.PI * 2, false);
             ctx.fill(); 
-            ctx.clip(); 
+            ctx.clip(); //clip后只能在该区域内绘制
             
             // 绘制第二个圆 
             ctx.beginPath(); ctx.fillStyle = 'black';
             ctx.arc(cx + 100, cy, radius, 0, Math.PI * 2, false);
             ctx.fill();
             //ctx.clip(); 
-            ctx.restore();
+            ctx.restore();//restore后恢复到save之前的状态，屏蔽此行试试
             
             // 绘制第三个圆 
             ctx.beginPath();
             ctx.fillStyle = 'green';
             ctx.arc(cx, cy + 100, radius, 0, Math.PI * 2, false);
             ctx.fill(); 
-            //ctx.clip();
+            //ctx.clip();//clip后只能在该区域内绘制
             
             // 绘制第四个圆 
             ctx.beginPath();

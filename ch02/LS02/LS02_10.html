@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,7 +13,7 @@
         function canvasApp() {
             var theCanvas = document.getElementById('canvas');
             var context = theCanvas.getContext('2d');
-            // drawScreenOne();
+            // drawScreenOne();//图片填充案例
             drawScreenTwo();
             function drawScreenOne() {
                 var fillImg = new Image();
@@ -40,7 +40,7 @@
                 
                 
                 
-                document.onclick = function(){
+                document.onclick = function(){ //离屏canvas图案填充案例
                     var fillPattern = context.createPattern(offScreenCanvas,'repeat');
                     context.fillStyle = fillPattern;
                     context.fillRect(0,0,500,300);

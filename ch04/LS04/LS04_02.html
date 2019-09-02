@@ -1,58 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title></title>
-<script type="text/javascript">
-window.addEventListener('load', eventWindowLoaded, false);	
-function eventWindowLoaded() {
-	canvasApp();
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            // var i = 0; //测试
+            var canvas = document.getElementById("canvasOne");
+            var context = canvas.getContext("2d");
+  
+            var animationHandle;
+            var radius = 100;
+            var circle = {centerX:250, centerY:250, radius:125, angle:0}
+            var ball = {x:0, y:0,speed:0.01};
+    
+            function drawScreen() {
+                //绘制背景
+                context.fillStyle = '#EEEEEE';
+                context.fillRect(0, 0, canvas.width, canvas.height);
+                context.strokeStyle = '#000000';
+                context.strokeRect(1, 1, canvas.width - 2, canvas.height - 2);
 
-}
+                ball.x = circle.centerX + Math.cos(circle.angle) * circle.radius;
+                ball.y = circle.centerY + Math.sin(circle.angle) * circle.radius;
+                circle.angle += ball.speed;
+            
+                //如果只是上面调整ball对象的属性，而不重新绘制的话，是无法显示的，印证了canvas是即时模式
+                context.fillStyle = "#000000";
+                context.beginPath();
+                context.arc(ball.x,ball.y,15,0,Math.PI*2,true);
+                context.closePath();
+                context.fill();
+                animationHandle = requestAnimationFrame(drawScreen);
+            }
 
-function canvasApp() {
-	var radius = 100;
-	var circle = {centerX:250, centerY:250, radius:125, angle:0}
-	var ball = {x:0, y:0,speed:.1};
-    theCanvas = document.getElementById('canvasOne');
-	context = theCanvas.getContext('2d');
-  function  drawScreen () {
-		context.fillStyle = '#EEEEEE';
-		context.fillRect(0, 0, theCanvas.width, theCanvas.height);
-		context.strokeStyle = '#000000'; 
-		context.strokeRect(1,  1, theCanvas.width-2, theCanvas.height-2);
-		
-		ball.x = circle.centerX + Math.cos(circle.angle) * circle.radius;
-		ball.y = circle.centerY + Math.sin(circle.angle) * circle.radius;
-		circle.angle += ball.speed;
-	
-		context.fillStyle = "#000000";
-		context.beginPath();
-		context.arc(ball.x,ball.y,15,0,Math.PI*2,true);
-		context.closePath();
-		context.fill();
-		animationHandle = requestAnimationFrame(drawScreen);
-	}
-	
-	
-	
-	var animationHandle = requestAnimationFrame(drawScreen);
-}
+            requestAnimationFrame(drawScreen);
 
-</script>
-
+            var isMoving = true;
+            document.onclick = function () {
+                if(isMoving){
+                    cancelAnimationFrame(animationHandle);
+                    isMoving = false;
+                }else{
+                    requestAnimationFrame(drawScreen);
+                    isMoving = true;
+                }
+            }
+        }
+    </script>
 </head>
-<body>  
-<div style="position: absolute; top: 50px; left: 50px;">
 
-<canvas id="canvasOne" width="500" height="500">
- Your browser does not support the HTML 5 Canvas. 
-</canvas>
-</div>
+<body>
+    <div style="position:absolute;top:10px;left:10px;">
+        <canvas id="canvasOne" width="500" height="500">
 
+        </canvas>
+    </div>
 </body>
+
 </html>
-
-
-
-

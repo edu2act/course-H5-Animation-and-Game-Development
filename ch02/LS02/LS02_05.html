@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -39,7 +39,7 @@
             ctx.strokeStyle = 'green';//
             ctx.lineCap = "round";
             ctx.lineWidth = 10;
-            ctx.beginPath();//路径的起始受beginPath的限制，而不会被save和restore截断
+            // ctx.beginPath();//路径的起始不被save和restore截断,而是受beginPath的限制
             ctx.moveTo(10,200);
             ctx.lineTo(200,200);
             ctx.lineTo(200,300);

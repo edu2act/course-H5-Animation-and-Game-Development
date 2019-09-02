@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
@@ -24,6 +24,10 @@
     </div>
     <script>
         //注意：跨域资源访问的问题,使用webstorm或使用火狐浏览器
+	/*
+	原因：图片存储在本地时，是默认没有域名的，用getImageData方法时，浏览器会判定为跨域而报错！
+	方法：把图片放置在服务器中，通过服务器返回给客户端，遵循同源策略或者用firefox浏览器打；
+	*/
         var canvasa = document.getElementById("canvasa");
         var contexta = canvasa.getContext("2d");
 

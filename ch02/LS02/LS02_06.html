@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
@@ -17,7 +17,7 @@
             context.lineWidth = 5;
             context.strokeStyle = "blue";
 
-            context.save();//注意：Canvas只能有一个“当前”路径，当调用context.save()方法时，不会将它存储为当前绘图状态的一部分
+            context.save();
             context.beginPath();
             // context.arc(100,100,50,0,Math.PI);//默认是顺时针,即默认anticlockwise为false
             // context.arc(100, 100, 50, Math.PI / 2, 0);//默认是顺时针,即默认anticlockwise为false
@@ -30,12 +30,15 @@
             context.stroke();
             context.restore();
             context.beginPath();
+
+
+
             
             context.arc(100, 100, 50, Math.PI*0.5, 0,true);
             context.stroke();
             context.restore();
 
-            context.save();//注意：Canvas只能有一个“当前”路径，当调用context.save()方法时，不会将它存储为当前绘图状态的一部分
+            context.save();
             context.strokeStyle = '#ff00ff';//设置描边颜色
             context.beginPath();//虽然调用了save和restore，但不会将当前路径存储为状态的一部分，所以若不beginPath描边依然覆盖
             context.moveTo(100, 200);
@@ -46,13 +49,6 @@
             //context.fill();
             context.closePath();
             context.restore();
-            
-
-            //注意：Canvas只能有一个“当前”路径，当调用save和restore方法时，不会将它存储为当前绘图状态的一部分
-            //详见context.save 和context.restore部分
-            //                context.save();
-            //                context.stroke();//虽然调用了context.save()，但不会将当前路径存储为状态的一部分，所以描边依然有效
-            //                context.restore();
         }
 
 
