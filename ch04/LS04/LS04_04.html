@@ -6,20 +6,14 @@
 	<title></title>
 
 	<script type="text/javascript">
-		window.addEventListener('load', eventWindowLoaded, false);
 		var shipImage;
-		function eventWindowLoaded() {
+		window.onload = function() {
 			shipImage = new Image();
 			shipImage.src = "./images/ship.png"
-			shipImage.onload = eventAssetsLoaded;
-		}
-
-		function eventAssetsLoaded() {
-			canvasApp();
+			shipImage.onload = canvasApp;
 		}
 
 		function canvasApp() {
-
 			var pointImage = new Image();
 			pointImage.src = "./images/pointwhite.png";
 			function drawScreen() {
@@ -29,11 +23,9 @@
 				context.strokeStyle = '#ffffff';
 				context.strokeRect(1, 1, theCanvas.width - 2, theCanvas.height - 2);
 
-				var dx = ship.endx - ship.x; //0
-				var dy = ship.endy - ship.y;
-
-				ship.velocityx = dx * easeValue; //0
-				ship.velocityy = dy * easeValue;
+				ship.velocityx = ship.velocityx;
+				ship.velocityy = ship.velocityy - 0.5*easeValue*easeValue;
+				// console.log(ship.velocityy);
 
 				ship.x += ship.velocityx;
 				ship.y += ship.velocityy;
@@ -45,20 +37,23 @@
 				}
 
 				context.drawImage(shipImage, ship.x, ship.y);
-				requestAnimationFrame(drawScreen);
+				
+				//console.log(ship.y);
+				if(ship.y>-50){
+					requestAnimationFrame(drawScreen);
+				}else{
+					cancelAnimationFrame(animationHandle);
+				}
 			}
-			var easeValue = .05;
-			var p1 = { x: 240, y: -20 };
-			var p2 = { x: 240, y: 470 };
 
-			var ship = { x: p1.x, y: p1.y, endx: p2.x, endy: p2.y, velocityx: 0, velocityy: 0 };
+			var easeValue = 0.98;
+			var ship = { x: 240, y: 470, velocityx: 0, velocityy: 0 }; //初始坐标{240,470}
 			var points = new Array();
 
 			theCanvas = document.getElementById('canvasOne');
 			context = theCanvas.getContext('2d');
 
 			var animationHandle = requestAnimationFrame(drawScreen);
-
 		}
 
 

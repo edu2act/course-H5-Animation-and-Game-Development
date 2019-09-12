@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title></title>
     <script type="text/javascript">
-        window.addEventListener('load', eventWindowLoaded, false);
-        function eventWindowLoaded() {
+
+        window.onload = function(){
             canvasApp();
         }
 
@@ -13,25 +13,24 @@
             var theCanvas = document.getElementById('canvas');
             var context = theCanvas.getContext('2d');
             var tileSheet=new Image();
-            tileSheet.addEventListener('load', eventSheetLoaded , false);
+            tileSheet.onload = function(){
+
+            };
             tileSheet.src="./images/tanks_sheet.png";
 
 
             var animationFrames=[1,2,3,4,5,6,7,8];
             var frameIndex=0;
             var rotation=90;
-            var x=50;
-            var y=50;
-            var dx=1;
+            var x=0;//x轴初始位置
+            var y=0;
+            var dx=1;//x轴偏移速度
             var dy=0;
 
-            function eventSheetLoaded() {
-                startUp();
-            }
-
             function drawScreen() {
-                x=x+dx;
-                y=y+dy;
+                x=x+dx;//x方向的新位置
+                y=y+dy;//y方向的新位置
+                // x = x>theCanvas.width?0:x; //若移动出屏幕后，重设x位置
 
                 //draw a background
                 context.fillStyle="#aaaaaa";
@@ -40,7 +39,7 @@
                 context.save();
                 context.setTransform(1,0,0,1,0,0);
                 var angleInRadians =rotation * Math.PI / 180;
-                context.translate(x+16, y+16);
+                context.translate(x+16, y+234);//坐标系平移
                 context.rotate(angleInRadians);
                 var sourceX=Math.floor(animationFrames[frameIndex] % 8) *32;
                 var sourceY=Math.floor(animationFrames[frameIndex] / 8) *32;
