@@ -23,5 +23,9 @@
 |15|性能优化与发布|Cocos2d-JS性能优化<br/>Cocos2d-JS游戏发布|
 |16|常用绘图框架（D3.js与Three.js)|EaselJS<br>D3.js<br>Three.js|
 
-# 同步课
+## 同步课
 http://www.edu2act.cn/team/2017-ji-H5-you-xi-kai-fa/confirm/
+
+## cocos2d-x-3.14.1 网盘链接
+链接：https://pan.baidu.com/s/1_1K40RB0_93H6DN6xEhA5A 
+提取码：h0rm
