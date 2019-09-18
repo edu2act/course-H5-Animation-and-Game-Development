@@ -1,0 +1,3 @@
+需要按照Python 2.7，若已安装Python 3，请参考下述链接，关于在同一台电脑上同时安装Python2和Python3
+https://www.cnblogs.com/qingcode0808/p/8470386.html
+https://www.cnblogs.com/zhengyihan1216/p/6011640.html
